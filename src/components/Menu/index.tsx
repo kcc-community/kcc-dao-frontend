@@ -69,10 +69,6 @@ const Menu: React.FunctionComponent = (props) => {
       route: '/',
     },
     {
-      title: t('Services'),
-      route: '/services',
-    },
-    {
       title: t('Member'),
       route: '/member',
     },
