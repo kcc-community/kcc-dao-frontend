@@ -16,18 +16,29 @@ export const HomeBackground = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    height: 741px;
+    padding: 0 24px;
+    border-radius: 0px;
+  }
 `
 
 export const ImgHomeTitle = styled.img`
   height: 52px;
-  width: 487px;
-  margin-top: 309px;
+  margin: 309px auto 0 auto;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    margin-top: 204px;
+  }
 `
 
 export const SecondText = styled(Text)`
   color: white;
   font-size: 18px;
   letter-spacing: 1.2px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    font-size: 16px;
+    letter-spacing: 1.1px;
+  }
 `
 
 export const InfoContainer = styled(Row)`
@@ -35,6 +46,9 @@ export const InfoContainer = styled(Row)`
   position: relative;
   margin: 0 auto;
   top: 284px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    top: 112px;
+  }
 `
 
 export const InfoCol = styled(Col)`
@@ -42,6 +56,9 @@ export const InfoCol = styled(Col)`
   align-items: center;
   width: 300px;
   margin-top: 20px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    margin: 0 0 48px 0;
+  }
 `
 
 export const HomeDao = styled(RowBetween)`
@@ -52,30 +69,48 @@ export const HomeDao = styled(RowBetween)`
 export const HomeFeatureRight = styled.img`
   width: 429px;
   height: 416px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 309px;
+    height: 299px;
+  }
 `
 
 export const HomeFeatureLeft = styled.img`
   width: 407px;
   height: 344px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 325px;
+    height: 275px;
+    margin-top: 60px;
+  }
 `
 
 export const HomeCommunityCard= styled.div`
   width: 100%;
-  height: 680px;
+  height: 500px;
   border-radius: 20px;
   margin-top: 143px;
-  margin-bottom: 276px;
+  margin-bottom: 88px;
   background: #1F2431;
   position: relative;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 341px;
+    height: 661px;
+    margin: 160px auto 40px auto;
+  }
 `
 
 export const HomeCommunityCardContainer = styled.div`
   width: 100%;
-  height: 680px;
+  height: 500px;
   border-radius: 20px;
   position: absolute;
   top: 0;
   overflow: hidden;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 341px;
+    height: 661px;
+  }
 `
 
 export const HomeCommunityCardBg = styled.div`
@@ -87,17 +122,30 @@ export const HomeCommunityCardBg = styled.div`
   position: absolute;
   left: 100px;
   top: -100px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 200px;
+    height: 200px;
+    filter: blur(50px);
+    top: -100px;
+    left: 70px;
+  }
 `
 
 export const HomeCommunityMedia = styled(RowBetween)`
   width: 648px;
   margin: 69px auto 110px auto;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 211px;
+  }
 `
 
 export const HomeCommunityMediaLink = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    margin-bottom: 46px;
+  }
 `
 
 export const HomeImgCommunity = styled.img`

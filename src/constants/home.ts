@@ -6,6 +6,7 @@ export const media = [
     icon: require('../assets/images/Icons/twitter-logo@2x.png').default,
     hover: require('../assets/images/Icons/twitter-logo-hover@2x.png').default,
     svg: require('../assets/images/Icons/twitter.svg').default,
+    h5: require('../assets/images/Icons/twitter-h5.png').default,
     route: 'https://twitter.com/KCCOfficialTW',
   },
   {
@@ -13,6 +14,7 @@ export const media = [
     icon: require('../assets/images/Icons/discord-logo@2x.png').default,
     hover: require('../assets/images/Icons/discord-logo-hover@2x.png').default,
     svg: require('../assets/images/Icons/discord.svg').default,
+    h5: require('../assets/images/Icons/discord-h5.png').default,
     route: 'https://discord.com/invite/H5ucJydSyd',
   },
   {
@@ -20,6 +22,7 @@ export const media = [
     icon: require('../assets/images/Icons/medium-logo@2x.png').default,
     hover: require('../assets/images/Icons/medium-logo-hover@2x.png').default,
     svg: require('../assets/images/Icons/medium.svg').default,
+    h5: require('../assets/images/Icons/medium-h5.png').default,
     route: 'https://kccofficial.medium.com/',
   },
   {
@@ -27,6 +30,7 @@ export const media = [
     icon: require('../assets/images/Icons/telegram-logo@2x.png').default,
     hover: require('../assets/images/Icons/telegram-logo-hover@2x.png').default,
     svg: require('../assets/images/Icons/telegram.svg').default,
+    h5: require('../assets/images/Icons/telegram-h5.png').default,
     route: 'https://t.me/KCCOfficialEnglishCommunity',
   },
 ]

@@ -5,6 +5,7 @@ export const titleGrant = require('../assets/images/home/title-grant.svg').defau
 export const titleMember = require('../assets/images/home/title-member.svg').default
 export const featureRight = require('../assets/images/home/feature-1.svg').default
 export const featureLeft = require('../assets/images/home/feature-2.svg').default
+export const memberMap = require('../assets/images/home/member.gif').default
 
 
 

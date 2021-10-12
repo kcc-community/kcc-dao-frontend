@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import styled, { useTheme } from 'styled-components'
-import { Container, Text } from '../../style'
-import Col from 'components/Column'
+import styled from 'styled-components'
 
 interface TitleProps {
   index: number
@@ -27,6 +25,11 @@ const HomeDaoCard = styled.div`
     top: -10px;
     color: ${({ theme }) => theme.colors.primary};
   }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 343px;
+    height: auto;
+    margin-bottom: 16px;
+  }
 `
 
 const HomeDaoBg = styled.div`
@@ -44,6 +47,10 @@ const ImgIcon = styled.img`
   width: 80px;
   height: 80px;
   margin-bottom: 24px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 88px;
+    height: 88px;
+  }
 `
 
 const Title = styled.div`
@@ -54,6 +61,7 @@ const Title = styled.div`
 `
 
 const Content = styled.div`
+  color: #E1E8F5;
   font-size: 14px;
   line-height: 28px;
   word-break: keep-all;
@@ -70,7 +78,6 @@ const iconList = [
 const DaoCard: React.FunctionComponent<TitleProps> = (props) => {
 
   const [hover, onHover] = useState(false)
-  const theme = useTheme()
 
   return (
     <HomeDaoCard onMouseEnter={() => onHover(true)} onMouseLeave={() => onHover(false)} style={{marginRight: props.mr ? '36px' : '0'}}>

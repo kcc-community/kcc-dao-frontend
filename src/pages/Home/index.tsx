@@ -1,9 +1,9 @@
-import React, { FunctionComponent, useState, useRef } from 'react'
+import React, { FunctionComponent } from 'react'
 import styled, { useTheme } from 'styled-components'
 import { Container, Text } from '../../style'
 import * as LocalStyle from '../../style/pages'
-import Row, { RowBetween, AutoRow } from 'components/Row'
-import Col from '../../components/Column'
+import { RowBetween } from 'components/Row'
+import Col, { AutoColumn } from '../../components/Column'
 import Title from '../../components/Title'
 import { titleHome, featureRight, featureLeft } from '../../constants/imgs'
 import { media } from '../../constants/home'
@@ -20,9 +20,10 @@ import { useHistory } from 'react-router'
 
 const HomePage: React.FunctionComponent = (props) => {
   const history = useHistory();
-  const { isTablet } = useResponsive();
+  const { isTablet, isMobile } = useResponsive();
   const { t } = useTranslation();
   const theme = useTheme();
+  const pageWidth = isMobile ? '100vw' : (isTablet ? '768px' : '1200px');
 
   const InfoData = (title: string, num: number, key: number) => {
     return (
@@ -47,19 +48,19 @@ const HomePage: React.FunctionComponent = (props) => {
       <Col style={{alignItems: 'center'}}>
         <FadeInUp>
           <Col style={{alignItems: 'center'}}>
-            <Title type="lines" title={t('DAO_4')}/>
-            <LocalStyle.SecondText mt="36px" mb="92px" style={{maxWidth: '850px', textAlign: 'center'}}>{t('DAO_5')}</LocalStyle.SecondText>
+            <Title type="lines" title={t('DAO_4')} isMobile={isMobile}/>
+            <LocalStyle.SecondText mt={isMobile ? "20px" : "36px"} mb={isMobile ? "32px" : "92px"} style={{maxWidth: isMobile ? '330px' : '850px', textAlign: 'center'}}>{t('DAO_5')}</LocalStyle.SecondText>
           </Col>
         </FadeInUp>
         <FadeInUp>
-          <LocalStyle.HomeDao style={{justifyContent: isTablet ? 'center' : 'space-between'}}>
-            <DaoCard index={0} title={t('DAO_6')} content={t('DAO_7')} mr={!isTablet}/>
+          <LocalStyle.HomeDao style={{justifyContent: isTablet || isMobile ? 'center' : 'space-between'}}>
+            <DaoCard index={0} title={t('DAO_6')} content={t('DAO_7')} mr={!isTablet && !isMobile}/>
             <DaoCard index={1} title={t('DAO_8')} content={t('DAO_9')} />
           </LocalStyle.HomeDao>
         </FadeInUp>
         <FadeInUp>
-          <LocalStyle.HomeDao style={{justifyContent: isTablet ? 'center' : 'space-between'}}>
-            <DaoCard index={2} title={t('DAO_10')} content={t('DAO_11')} mr={!isTablet}/>
+          <LocalStyle.HomeDao style={{justifyContent: isTablet || isMobile  ? 'center' : 'space-between'}}>
+            <DaoCard index={2} title={t('DAO_10')} content={t('DAO_11')} mr={!isTablet && !isMobile}/>
             <DaoCard index={3} title={t('DAO_12')} content={t('DAO_13')}/>
           </LocalStyle.HomeDao>
         </FadeInUp>
@@ -69,32 +70,62 @@ const HomePage: React.FunctionComponent = (props) => {
 
   const renderFeatures = () => {
     return(
-      <Col style={{alignItems: 'center', marginTop: '200px'}}>
+      <Col style={{alignItems: isMobile ? 'flex-start' : 'center', marginTop: isMobile ? '0' : '200px', width: '100%'}}>
         <FadeInUp>
-          <Col style={{alignItems: 'center'}}>
-            <Title type="lines" title={t('DAO_14')}/>
-            <LocalStyle.SecondText mt="36px" mb="92px" style={{width: '460px', textAlign: 'center'}}>{t('DAO_15')}</LocalStyle.SecondText>
+          <Col style={{alignItems: 'center', width: isMobile ? '100vw' : 'auto'}}>
+            <Title type="lines" title={t('DAO_14')} isMobile={isMobile}/>
+            <LocalStyle.SecondText mt={isMobile ? "26px" : "36px"} mb={isMobile ? "50px" : "92px"} style={{width: isMobile ? '330px' : '460px', textAlign: 'center'}}>{t('DAO_15')}</LocalStyle.SecondText>
           </Col>
         </FadeInUp>
-        <FadeInUp>
-          <RowBetween style={{maxWidth: '1100px', justifyContent: isTablet ? 'center' : 'space-between'}}>
-            <Col>
-              <Title type="number" number={1} title={t('DAO_16')}/>
-              <LocalStyle.SecondText mt="40px" style={{width: '550px'}}>{t('DAO_17')}</LocalStyle.SecondText>
-            </Col>
-            <LocalStyle.HomeFeatureRight src={featureRight}/>
-          </RowBetween>
-        </FadeInUp>
-        <FadeInUp>
-          <RowBetween style={{maxWidth: '1100px', marginTop: '95px', justifyContent: isTablet ? 'center' : 'space-between'}}>
-            {!isTablet && <LocalStyle.HomeFeatureLeft src={featureLeft}/>}
-            <Col>
-              <Title type="number" number={2} title={t('DAO_18')}/>
-              <LocalStyle.SecondText mt="40px" style={{width: '500px'}}>{t('DAO_19')}</LocalStyle.SecondText>
-            </Col>
-            {isTablet && <LocalStyle.HomeFeatureLeft src={featureLeft}/>}
-          </RowBetween>
-        </FadeInUp>
+        {
+          isMobile ?
+          <div style={{width: '100vw'}}>
+            <FadeInUp>
+              <AutoColumn justify="center">
+                <LocalStyle.HomeFeatureRight src={featureRight}/>
+              </AutoColumn>
+            </FadeInUp>
+            <FadeInUp>
+              <Col style={{marginLeft: '30px'}}>
+                <Title type="number" number={1} title={t('DAO_16')}/>
+                <LocalStyle.SecondText mt="30px" style={{width: '300px'}}>{t('DAO_17')}</LocalStyle.SecondText>
+              </Col>
+            </FadeInUp>
+            <FadeInUp>
+              <AutoColumn justify="center">
+                <LocalStyle.HomeFeatureLeft src={featureLeft}/>
+              </AutoColumn>
+            </FadeInUp>
+            <FadeInUp>
+              <Col style={{marginLeft: '30px'}}>
+                <Title type="number" number={2} title={t('DAO_18')}/>
+                <LocalStyle.SecondText mt="25px" style={{width: '300px'}}>{t('DAO_19')}</LocalStyle.SecondText>
+              </Col>
+            </FadeInUp>
+          </div>
+          :
+          <>
+            <FadeInUp>
+              <RowBetween style={{maxWidth: '1100px', justifyContent: isTablet ? 'center' : 'space-between'}}>
+                <Col>
+                  <Title type="number" number={1} title={t('DAO_16')}/>
+                  <LocalStyle.SecondText mt="40px" style={{width: '550px'}}>{t('DAO_17')}</LocalStyle.SecondText>
+                </Col>
+                <LocalStyle.HomeFeatureRight src={featureRight}/>
+              </RowBetween>
+            </FadeInUp>
+            <FadeInUp>
+              <RowBetween style={{maxWidth: '1100px', marginTop: '95px', justifyContent: isTablet ? 'center' : 'space-between'}}>
+                {!isTablet && <LocalStyle.HomeFeatureLeft src={featureLeft}/>}
+                <Col>
+                  <Title type="number" number={2} title={t('DAO_18')}/>
+                  <LocalStyle.SecondText mt="40px" style={{width: '500px'}}>{t('DAO_19')}</LocalStyle.SecondText>
+                </Col>
+                {isTablet && <LocalStyle.HomeFeatureLeft src={featureLeft}/>}
+              </RowBetween>
+            </FadeInUp>
+          </>
+        }
       </Col>
     )
   }
@@ -116,9 +147,9 @@ const HomePage: React.FunctionComponent = (props) => {
             <LocalStyle.HomeCommunityCardBg />
           </LocalStyle.HomeCommunityCardContainer>
           <FadeInUp>
-            <Col style={{alignItems: 'center', paddingTop: '90px'}}>
-              <Title type="lines" title={t('DAO_20')}/>
-              <LocalStyle.SecondText mt="30px" style={{textAlign: 'center'}}>{t('DAO_21')}</LocalStyle.SecondText>
+            <Col style={{alignItems: 'center', paddingTop: isMobile ? '0' : '70px'}}>
+              <Title type="lines" title={t('DAO_20')} isMobile={isMobile}/>
+              <LocalStyle.SecondText mt={isMobile ? "15px" : "30px"} style={{textAlign: 'center'}}>{t('DAO_21')}</LocalStyle.SecondText>
               <LocalStyle.SecondText mt="5px" style={{textAlign: 'center'}}>{t('DAO_22')}</LocalStyle.SecondText>
             </Col>
           </FadeInUp>
@@ -127,12 +158,12 @@ const HomePage: React.FunctionComponent = (props) => {
               {media.map((item, index) => renderMedia(index))}
             </LocalStyle.HomeCommunityMedia>
           </FadeInUp>
-          <FadeInUp>
+          {/* <FadeInUp>
             <AutoRow justify="center">
               <CommunityCard index={0} title={t('DAO_23')}/>
               <CommunityCard index={1} title={t('DAO_24')}/>
             </AutoRow>
-          </FadeInUp>
+          </FadeInUp> */}
         </LocalStyle.HomeCommunityCard>
       </FadeInUp>
     )
@@ -140,11 +171,14 @@ const HomePage: React.FunctionComponent = (props) => {
 
   return (
       <>
-        <Container width={isTablet ? '768px' : '1200px'}>
+        <Container width={pageWidth}>
+          {/* <img src={require('../../assets/images/home/member.gif').default} style={{width: '1200px', height: '600px'}}/> */}
           <LocalStyle.HomeBackground>
             <FadeInUp>
-              <LocalStyle.ImgHomeTitle src={titleHome}/>
-              <LocalStyle.SecondText mt="17px">{t('DAO_0')}</LocalStyle.SecondText>
+              <AutoColumn justify="center">
+                <LocalStyle.ImgHomeTitle src={titleHome}/>
+                <LocalStyle.SecondText mt={isMobile ? "20px" : "17px"} style={{width: isMobile ? '250px' : 'auto'}}>{t('DAO_0')}</LocalStyle.SecondText>
+              </AutoColumn>
             </FadeInUp>
             <LocalStyle.InfoContainer>
               {InfoData(t('DAO_1'), 12211000, 0)}
@@ -156,7 +190,7 @@ const HomePage: React.FunctionComponent = (props) => {
           {renderFeatures()}
           {renderCommunity()}
         </Container>
-        <Footer transparent={true}/>
+        <Footer transparent={true} isMobile={isMobile}/>
       </>
   )
 }

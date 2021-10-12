@@ -1,11 +1,10 @@
-import React, { FunctionComponent, useEffect } from 'react'
-import { useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
+import React, { FunctionComponent } from 'react'
 import styled, { useTheme } from 'styled-components'
 import { RowFixed, RowBetween } from '../Row'
 import { Text } from '../../style'
-import { useHistory, useRouteMatch } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { useDispatch } from 'react-redux'
+import { useResponsive } from 'utils/responsive'
 
 const Wrapper = styled.div`
   position: relative;
@@ -28,6 +27,9 @@ const StyledNav = styled.nav`
   background-color: ${({ theme }) => theme.colors.backgroundNav};
   z-index: 20;
   transform: translate3d(0, 0, 0);
+  ${({ theme }) => theme.mediaQueries.sm} {
+    padding: 0 32px;
+  }
 `
 
 const BodyWrapper = styled.div`
@@ -46,7 +48,11 @@ const Inner = styled.div`
 
 const ImgLogo = styled.img`
   height: 22px;
-  cursor: pointer
+  cursor: pointer;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    height: auto;
+    width: 91px;
+  }
 `
 
 interface MenuList {
@@ -56,13 +62,10 @@ interface MenuList {
 
 const Menu: React.FunctionComponent = (props) => {
   const { t } = useTranslation();
-  const { account, chainId } = useWeb3React()
   const history = useHistory();
-  const matchHome = useRouteMatch({ path: '/', strict: true, sensitive: true });
-  const matchAccount = useRouteMatch({ path: '/account', strict: true, sensitive: true });
-  const theme = useTheme()
-  const dispatch = useDispatch()
-  const href = window.location.href
+  const theme = useTheme();
+  const { isMobile } = useResponsive();
+
   const menuList: MenuList[] = [
     {
       title: t('Home'),
@@ -73,26 +76,6 @@ const Menu: React.FunctionComponent = (props) => {
       route: '/member',
     },
   ]
-
-  useEffect(() => {
-    const isHome = matchHome && matchHome.isExact;
-    const isAccount = matchAccount && matchAccount.isExact;
-    let body = document.getElementsByTagName('body')[0];
-    let lastLocation: any;
-    history.listen((location) => {
-      if (lastLocation !== location) {
-        window.scrollTo(0, 0);
-      }
-      lastLocation = location;
-    });
-    if(isHome){
-      body.setAttribute('style',`background: ${theme.colors.background}`)
-    } else if(isAccount){
-      body.setAttribute('style',`background: ${theme.colors.backgroundLight}`)
-    } else {
-      body.setAttribute('style',`background: ${theme.colors.invertedContrast}`)
-    }
-  }, [history, href])
   
   const renderMenu = (data, index) => {
     return(

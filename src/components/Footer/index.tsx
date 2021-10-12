@@ -2,6 +2,7 @@ import React, { FunctionComponent, useEffect } from 'react'
 import styled from 'styled-components'
 import { Container, Text } from '../../style'
 import Row, { RowBetween } from 'components/Row'
+import { AutoColumn } from 'components/Column'
 import { media } from '../../constants/home'
 import $ from 'jquery'
 
@@ -11,6 +12,11 @@ const FooterWrap = styled.div<{ transparent?: boolean }>`
   background: ${({ theme, transparent }) => `${transparent ? theme.colors.backgroundAlt : theme.colors.backgroundNav}`};
   display: flex;
   align-items: center;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    height: 180px;
+    background: #262C3A;
+    padding: 0 44px;
+  }
 `
 
 const MediaItem = styled.a`
@@ -24,12 +30,17 @@ const MediaItem = styled.a`
   margin-left: 24px;
   :hover{
     background: #B8C6D8;
-    // opacity: .75;
   }
+  ${({ theme }) => theme.mediaQueries.sm} {
+    background: none;
+    margin: 32px 0 0 0;  
+  }
+
 `
 
 interface FooterProps {
   transparent?: boolean
+  isMobile?: boolean
 } 
 
 const Footer: React.FunctionComponent<FooterProps> = (props) => {
@@ -46,7 +57,7 @@ const Footer: React.FunctionComponent<FooterProps> = (props) => {
   const renderMedia = (data, index) => {
     return(
       <MediaItem href={data?.route} target="_blank" key={index} className={data?.app}>
-        <img src={data?.icon} style={{width: '20px'}} alt={data?.app} className={data?.app + 'Logo'}/> 
+        <img src={props.isMobile ? data?.h5 : data?.icon} style={{width: props.isMobile ? '44px' : '20px'}} alt={data?.app} className={data?.app + 'Logo'}/> 
       </MediaItem>
     )
   }
@@ -54,12 +65,22 @@ const Footer: React.FunctionComponent<FooterProps> = (props) => {
   return (
     <FooterWrap transparent={props?.transparent}>
       <Container>
-        <RowBetween>
-          <Text color={'#FFFFFFCC'}>© 2021 DAO KCC All rights reserved</Text>
-          <Row style={{width: 'auto'}}>
-            {media.map((item, index) => renderMedia(item, index))}
-          </Row>
-        </RowBetween>
+        {
+          props.isMobile ?
+          <AutoColumn justify="center">
+            <Text color={'#FFFFFFCC'}>© 2021 GoDAO All rights reserved</Text>
+            <RowBetween>
+              {media.map((item, index) => renderMedia(item, index))}
+            </RowBetween>
+          </AutoColumn>
+          :
+          <RowBetween>
+            <Text color={'#FFFFFFCC'}>© 2021 DAO KCC All rights reserved</Text>
+            <Row style={{width: 'auto'}}>
+              {media.map((item, index) => renderMedia(item, index))}
+            </Row>
+          </RowBetween>
+        }
       </Container>
     </FooterWrap>
   )
