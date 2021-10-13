@@ -23,15 +23,16 @@ export const ImgMemberMap = styled.img`
 `
 
 export const MemberContainer = styled.div`
-  width: 960px;
+  width: 850px;
   margin: 0 auto 140px auto;
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 100vw;
-    padding: 0 20px
+    padding: 0 25px;
+    margin: 0 auto 80px auto;
   }
 `
 
-export const MemberBtn = styled.div`
+export const MemberBtn = styled.div<{ isCategoryMr?: boolean }>`
   height: 60px;
   width: 120px;
   border-radius: 12px;
@@ -49,10 +50,11 @@ export const MemberBtn = styled.div`
     font-size: 16px;
     line-height: 40px;
     margin-top: 12px;
+    margin-right: ${({ isCategoryMr }) => isCategoryMr ? '12px' : '0'};
   }
 `
 
-export const MemberBtnSec = styled.div`
+export const MemberBtnSec = styled.div<{ isCategoryMr?: boolean }>`
   height: 60px;
   width: 120px;
   border-radius: 12px;
@@ -70,6 +72,7 @@ export const MemberBtnSec = styled.div`
     font-size: 16px;
     line-height: 40px;
     margin-top: 12px;
+    margin-right: ${({ isCategoryMr }) => isCategoryMr ? '12px' : '0'};
   }
 `
 
@@ -78,6 +81,10 @@ export const MemberAvatar = styled.img`
   width: 120px;
   border-radius: 60px;
   margin-bottom: 12px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    height: 80px;
+    width: 80px;
+  }
 `
 
 export const MemberText = styled.div`
