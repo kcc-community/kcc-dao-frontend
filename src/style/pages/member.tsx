@@ -76,14 +76,26 @@ export const MemberBtnSec = styled.div<{ isCategoryMr?: boolean }>`
   }
 `
 
-export const MemberAvatar = styled.img`
+export const MemberAvatarContainer = styled(Row)`
   height: 120px;
   width: 120px;
+  background: #2E3340;
   border-radius: 60px;
   margin-bottom: 12px;
+  justify-content: center;
   ${({ theme }) => theme.mediaQueries.sm} {
     height: 80px;
     width: 80px;
+  }
+`
+
+export const MemberAvatar = styled.img`
+  height: 72px;
+  width: 72px;
+  border-radius: 60px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    height: 48px;
+    width: 48px;
   }
 `
 

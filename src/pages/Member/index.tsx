@@ -26,7 +26,9 @@ const MemberPage: React.FunctionComponent = (props) => {
     const isMr = isMobile ? isMobileMr : isWebMr;
     return(
       <AutoColumn justify="center" key={index} style={{marginRight: isMr ? mrNumber : '0', marginBottom: '36px'}}>
-        <LocalStyle.MemberAvatar src={data?.avatar}/>
+        <LocalStyle.MemberAvatarContainer>
+          <LocalStyle.MemberAvatar src={data?.avatar}/>
+        </LocalStyle.MemberAvatarContainer>
         <Text color={"white"} fontWeight={"700"} fontSize={isMobile ? "16px" : "20px"}>{data.name}</Text>
         <LocalStyle.MemberText>{data.address.substr(0, 4) + '...' + data.address.substr(-4)}</LocalStyle.MemberText>
       </AutoColumn>
