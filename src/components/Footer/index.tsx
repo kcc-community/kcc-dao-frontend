@@ -44,6 +44,8 @@ interface FooterProps {
 } 
 
 const Footer: React.FunctionComponent<FooterProps> = (props) => {
+  const footer = "© 2021 GoDao All rights reserved";
+
   useEffect(() => {
     for(let index in media){
       $('.' + media[index].app).hover(function(){
@@ -68,14 +70,14 @@ const Footer: React.FunctionComponent<FooterProps> = (props) => {
         {
           props.isMobile ?
           <AutoColumn justify="center">
-            <Text color={'#FFFFFFCC'}>© 2021 GoDAO All rights reserved</Text>
+            <Text color={'#FFFFFFCC'}>{footer}</Text>
             <RowBetween>
               {media.map((item, index) => renderMedia(item, index))}
             </RowBetween>
           </AutoColumn>
           :
           <RowBetween>
-            <Text color={'#FFFFFFCC'}>© 2021 DAO KCC All rights reserved</Text>
+            <Text color={'#FFFFFFCC'}>{footer}</Text>
             <Row style={{width: 'auto'}}>
               {media.map((item, index) => renderMedia(item, index))}
             </Row>

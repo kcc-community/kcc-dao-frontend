@@ -123,7 +123,7 @@ service.interceptors.response.use(
 )
 
 const handleResposne = (res, resolve, reject, params) => {
-  if ((res.code && res.code === '0') || (res.msg && res.msg === 'SUCCESS')) {
+  if ((res.code && res.code === '0') || (res.msg && res.msg === 'SUCCESS') || res.data) {
       if (params && params.original) {
           resolve(res)
           return

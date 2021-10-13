@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useEffect, useState } from 'react'
 import styled, { useTheme } from 'styled-components'
 import { Container, Text } from '../../style'
 import * as LocalStyle from '../../style/pages'
@@ -16,14 +16,43 @@ import { useResponsive } from 'utils/responsive'
 import { ApiService, useLoading } from '../../api'
 import { useTranslation } from 'react-i18next'
 import { useHistory } from 'react-router'
+import { AnyMap } from 'immer/dist/internal'
 
 
 const HomePage: React.FunctionComponent = (props) => {
   const history = useHistory();
   const { isTablet, isMobile } = useResponsive();
   const { t } = useTranslation();
+  const [snapLoading, getSnapShot] = useLoading(ApiService.postSnapShot);
+  const [addressLoading, getAddress] = useLoading(ApiService.getHomePriceInfo);
+  const [info, setInfo] = useState({address: 0, member: 0, proposal: 0})
   const theme = useTheme();
   const pageWidth = isMobile ? '100vw' : (isTablet ? '768px' : '1200px');
+
+  useEffect(() => {
+    Promise.all([
+      getAddress(),
+      getSnapShot({
+        "operationName": "Proposals",
+        "variables": {
+          "first": 6,
+          "skip": 0,
+          "space": "kcc.eth",
+          "state": "all",
+          "author_in": []
+        },
+        "query":"query Proposals($first: Int!, $skip: Int!, $state: String!, $space: String, $space_in: [String], $author_in: [String]) {\n  proposals(\n    first: $first\n    skip: $skip\n    where: {space: $space, state: $state, space_in: $space_in, author_in: $author_in}\n  ) {\n    id\n    title\n    body\n    start\n    end\n    state\n    author\n    created\n    space {\n      id\n      name\n      members\n      avatar\n    }\n  }\n}\n"
+      })
+    ]).then((res: any) => {
+      console.log('???????',res)
+      let info = {
+        address: res[0].addressCount,
+        proposal: res[1].proposals.length,
+        member: 10,
+      };
+      setInfo(info)
+    })
+  }, [])
 
   const InfoData = (title: string, num: number, key: number) => {
     return (
@@ -34,7 +63,7 @@ const HomePage: React.FunctionComponent = (props) => {
               start={0} 
               end={num} 
               decimals={0}
-              duration={1.5} 
+              duration={key === 0 ? 1.5 : .5} 
               separator=","/>
           </Text>
           <LocalStyle.SecondText style={{fontSize: '16px'}}>{title}</LocalStyle.SecondText>
@@ -49,7 +78,7 @@ const HomePage: React.FunctionComponent = (props) => {
         <FadeInUp>
           <Col style={{alignItems: 'center'}}>
             <Title type="lines" title={t('DAO_4')} isMobile={isMobile}/>
-            <LocalStyle.SecondText mt={isMobile ? "20px" : "36px"} mb={isMobile ? "32px" : "92px"} style={{maxWidth: isMobile ? '330px' : '850px', textAlign: 'center'}}>{t('DAO_5')}</LocalStyle.SecondText>
+            <LocalStyle.SecondText mt={isMobile ? "20px" : "36px"} mb={isMobile ? "32px" : "92px"} style={{maxWidth: isMobile ? '330px' : '850px', textAlign: 'center', whiteSpace: 'pre-line'}}>{t('DAO_5')}</LocalStyle.SecondText>
           </Col>
         </FadeInUp>
         <FadeInUp>
@@ -71,12 +100,12 @@ const HomePage: React.FunctionComponent = (props) => {
   const renderFeatures = () => {
     return(
       <Col style={{alignItems: isMobile ? 'flex-start' : 'center', marginTop: isMobile ? '0' : '200px', width: '100%'}}>
-        <FadeInUp>
+        {/* <FadeInUp>
           <Col style={{alignItems: 'center', width: isMobile ? '100vw' : 'auto'}}>
             <Title type="lines" title={t('DAO_14')} isMobile={isMobile}/>
             <LocalStyle.SecondText mt={isMobile ? "26px" : "36px"} mb={isMobile ? "50px" : "92px"} style={{width: isMobile ? '330px' : '460px', textAlign: 'center'}}>{t('DAO_15')}</LocalStyle.SecondText>
           </Col>
-        </FadeInUp>
+        </FadeInUp> */}
         {
           isMobile ?
           <div style={{width: '100vw'}}>
@@ -88,7 +117,7 @@ const HomePage: React.FunctionComponent = (props) => {
             <FadeInUp>
               <Col style={{marginLeft: '30px'}}>
                 <Title type="number" number={1} title={t('DAO_16')}/>
-                <LocalStyle.SecondText mt="30px" style={{width: '300px'}}>{t('DAO_17')}</LocalStyle.SecondText>
+                <LocalStyle.SecondText mt="30px" style={{width: '300px', whiteSpace: 'pre-line'}}>{t('DAO_17')}</LocalStyle.SecondText>
               </Col>
             </FadeInUp>
             <FadeInUp>
@@ -109,7 +138,7 @@ const HomePage: React.FunctionComponent = (props) => {
               <RowBetween style={{maxWidth: '1100px', justifyContent: isTablet ? 'center' : 'space-between'}}>
                 <Col>
                   <Title type="number" number={1} title={t('DAO_16')}/>
-                  <LocalStyle.SecondText mt="40px" style={{width: '550px'}}>{t('DAO_17')}</LocalStyle.SecondText>
+                  <LocalStyle.SecondText mt="40px" style={{width: '550px', whiteSpace: 'pre-line'}}>{t('DAO_17')}</LocalStyle.SecondText>
                 </Col>
                 <LocalStyle.HomeFeatureRight src={featureRight}/>
               </RowBetween>
@@ -181,9 +210,9 @@ const HomePage: React.FunctionComponent = (props) => {
               </AutoColumn>
             </FadeInUp>
             <LocalStyle.InfoContainer>
-              {InfoData(t('DAO_1'), 12211000, 0)}
-              {InfoData(t('DAO_2'), 7255554, 1)}
-              {InfoData(t('DAO_3'), 520000, 2)}
+              {InfoData(t('DAO_1'), info.address, 0)}
+              {InfoData(t('DAO_2'), info.member, 1)}
+              {InfoData(t('DAO_3'), info.proposal, 2)}
             </LocalStyle.InfoContainer>
           </LocalStyle.HomeBackground>
           {renderDAO()}

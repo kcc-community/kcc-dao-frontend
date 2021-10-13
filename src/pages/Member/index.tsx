@@ -55,11 +55,9 @@ const MemberPage: React.FunctionComponent = (props) => {
             <LocalStyle.SecondText mt={isMobile ? "20px" : "17px"} style={{width: isMobile ? '210px' : 'auto', textAlign: 'center'}}>{t('DAO_25')}</LocalStyle.SecondText>
           </AutoColumn>
         </FadeInUp>
-        <FadeInUp>
-          <LocalStyle.ImgMemberMap src={memberMap} />
-        </FadeInUp>
+        <LocalStyle.ImgMemberMap src={memberMap} />
         <LocalStyle.MemberContainer> 
-          <FadeInUp>
+          {/* <FadeInUp> */}
             <RowBetween style={{flexWrap: 'wrap', justifyContent: isMobile ? 'flex-start' : 'space-between'}}>
               {
                 category.map((item, index) => {
@@ -69,7 +67,7 @@ const MemberPage: React.FunctionComponent = (props) => {
                 })
               }
             </RowBetween>
-          </FadeInUp>
+          {/* </FadeInUp> */}
           {(tab === 0 || tab === 1) && renderList(t('DAO_29'), ambassadorList['Engineer'])}
           {(tab === 0 || tab === 2) && renderList(t('DAO_30'), ambassadorList['Marketing'])}
           {(tab === 0 || tab === 3) && renderList(t('DAO_31'), ambassadorList['Adviser'])}

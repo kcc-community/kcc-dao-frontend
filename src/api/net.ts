@@ -1,5 +1,9 @@
 import { get, post } from './axios'
 
-export function getDappList(data): Object{
-  return get('/api/v1/explore', data)
+export function getHomePriceInfo(){
+  return get('/api/v1/kcs/price')
+}
+
+export function postSnapShot(data): Object{
+  return post('https://hub.snapshot.org/graphql', data)
 }
