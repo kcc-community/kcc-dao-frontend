@@ -83,7 +83,7 @@ const DaoCard: React.FunctionComponent<TitleProps> = (props) => {
     <HomeDaoCard onMouseEnter={() => onHover(true)} onMouseLeave={() => onHover(false)} style={{marginRight: props.mr ? '36px' : '0'}}>
       {hover && <HomeDaoBg />}
       <ImgIcon src={iconList[props.index]}/>
-      <Title>{props.title}</Title>
+      <Title style={{fontSize: props.index === 3 ? '25px': '28px'}}>{props.title}</Title>
       <Content>{props.content}</Content>
     </HomeDaoCard>
   )

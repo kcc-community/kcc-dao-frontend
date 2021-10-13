@@ -16,11 +16,9 @@ import { useResponsive } from 'utils/responsive'
 import { ApiService, useLoading } from '../../api'
 import { useTranslation } from 'react-i18next'
 import { useHistory } from 'react-router'
-import { AnyMap } from 'immer/dist/internal'
 
 
 const HomePage: React.FunctionComponent = (props) => {
-  const history = useHistory();
   const { isTablet, isMobile } = useResponsive();
   const { t } = useTranslation();
   const [snapLoading, getSnapShot] = useLoading(ApiService.postSnapShot);
@@ -35,7 +33,7 @@ const HomePage: React.FunctionComponent = (props) => {
       getSnapShot({
         "operationName": "Proposals",
         "variables": {
-          "first": 6,
+          "first": 30,
           "skip": 0,
           "space": "kcc.eth",
           "state": "all",
@@ -44,7 +42,6 @@ const HomePage: React.FunctionComponent = (props) => {
         "query":"query Proposals($first: Int!, $skip: Int!, $state: String!, $space: String, $space_in: [String], $author_in: [String]) {\n  proposals(\n    first: $first\n    skip: $skip\n    where: {space: $space, state: $state, space_in: $space_in, author_in: $author_in}\n  ) {\n    id\n    title\n    body\n    start\n    end\n    state\n    author\n    created\n    space {\n      id\n      name\n      members\n      avatar\n    }\n  }\n}\n"
       })
     ]).then((res: any) => {
-      console.log('???????',res)
       let info = {
         address: res[0].addressCount,
         proposal: res[1].proposals.length,
@@ -108,7 +105,7 @@ const HomePage: React.FunctionComponent = (props) => {
         </FadeInUp> */}
         {
           isMobile ?
-          <div style={{width: '100vw'}}>
+          <div style={{width: '100vw', marginTop: '120px'}}>
             <FadeInUp>
               <AutoColumn justify="center">
                 <LocalStyle.HomeFeatureRight src={featureRight}/>
