@@ -68,22 +68,22 @@ export const HomeDao = styled(RowBetween)`
 `
 
 export const HomeFeatureRight = styled.img`
-  width: 429px;
-  height: 416px;
+  width: 440px;
+  height: 440px;
   margin-right: 50px;
   ${({ theme }) => theme.mediaQueries.sm} {
-    width: 309px;
-    height: 299px;
+    width: 325px;
+    height: 325px;
     margin-right: 0;
   }
 `
 
 export const HomeFeatureLeft = styled.img`
-  width: 407px;
-  height: 344px;
+  width: 440px;
+  height: 440px;
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 325px;
-    height: 275px;
+    height: 325px;
     margin-top: 60px;
   }
 `
