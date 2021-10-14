@@ -93,58 +93,7 @@ const ResetCSS = createGlobalStyle`
   ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px ${({ theme }) => theme.colors.input}; 
     border-radius: 10px;
-  }
-
-  /* Slider */ 
-  input[type=range] {
-    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-    width: 100%; /* Specific width is required for Firefox. */
-    background: transparent; /* Otherwise white in Chrome */
-  }
-  input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-  }
-  input[type=range]:focus {
-    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
-  }
-  input[type=range]::-ms-track {
-    width: 100%;
-    cursor: pointer;
-    /* Hides the slider so custom styles can be added */
-    background: transparent; 
-    border-color: transparent;
-    color: transparent;
-  }  
-  .homeSlider {
-    width: 880px !important;
-  }
-  .slick-dots{
-    bottom: -38px;
-  }
-  .slick-dots li{
-    margin: 0;
-  }
-  li:before{
-    content: '';
-  }
-  .slick-dots li button:before{
-    color: #B8C6D866;
-    opacity: 1;
-  }
-  .slick-dots li.slick-active button:before {
-    color: #B8C6D8;
-    opacity: 1;
-  }
-  .kcc-pagination{
-    display: flex;
-    justify-content: center;
-  }
-  .slider-single-content{
-    width: 880px !important;
-  }
-  .react-3d-carousel{
-    width: 1200px;
-  }
+  } 
 `
 
 export default ResetCSS

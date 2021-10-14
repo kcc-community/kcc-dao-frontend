@@ -112,9 +112,9 @@ const HomePage: React.FunctionComponent = (props) => {
               </AutoColumn>
             </FadeInUp>
             <FadeInUp>
-              <Col style={{marginLeft: '30px'}}>
+              <Col style={{alignItems: 'center'}}>
                 <Title type="number" number={1} title={t('DAO_16')}/>
-                <LocalStyle.SecondText mt="30px" style={{width: '300px', whiteSpace: 'pre-line'}}>{t('DAO_17')}</LocalStyle.SecondText>
+                <LocalStyle.SecondText mt="30px" style={{width: '300px', whiteSpace: 'pre-line', marginLeft: '20px'}}>{t('DAO_17')}</LocalStyle.SecondText>
               </Col>
             </FadeInUp>
             <FadeInUp>
@@ -123,9 +123,9 @@ const HomePage: React.FunctionComponent = (props) => {
               </AutoColumn>
             </FadeInUp>
             <FadeInUp>
-              <Col style={{marginLeft: '30px'}}>
+              <Col style={{alignItems: 'center'}}>
                 <Title type="number" number={2} title={t('DAO_18')}/>
-                <LocalStyle.SecondText mt="25px" style={{width: '300px'}}>{t('DAO_19')}</LocalStyle.SecondText>
+                <LocalStyle.SecondText mt="25px" style={{width: '300px', marginLeft: '20px'}}>{t('DAO_19')}</LocalStyle.SecondText>
               </Col>
             </FadeInUp>
           </div>

@@ -22,11 +22,23 @@ export const ImgMemberMap = styled.img`
   }
 `
 
+export const ImgMemberLoading = styled.div`
+  width: 1200px;
+  height: 600px;
+  margin-top: 53px;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    margin-top: 25px;
+  }
+`
+
 export const MemberContainer = styled.div`
-  width: 850px;
+  max-width: 850px;
+  min-width: 750px;
   margin: 0 auto 140px auto;
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 100vw;
+    min-width: auto;
+    max-width: auto;
     padding: 0 25px;
     margin: 0 auto 80px auto;
   }
@@ -106,10 +118,13 @@ export const MemberText = styled.div`
   color: #E1E8F599;
   font-size: 14px;
   margin-top: 8px;
-  width: 80px;
+  width: 120px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: 80px;
+  }
 `
 
 

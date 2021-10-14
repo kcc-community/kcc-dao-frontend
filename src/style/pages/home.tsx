@@ -47,6 +47,8 @@ export const InfoContainer = styled(Row)`
   top: 254px;
   ${({ theme }) => theme.mediaQueries.sm} {
     top: 112px;
+    display: flex;
+    justify-content: center;
   }
 `
 
@@ -72,6 +74,7 @@ export const HomeFeatureRight = styled.img`
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 309px;
     height: 299px;
+    margin-right: 0;
   }
 `
 
@@ -135,7 +138,7 @@ export const HomeCommunityMedia = styled(RowBetween)`
   width: 648px;
   margin: 45px auto 110px auto;
   ${({ theme }) => theme.mediaQueries.sm} {
-    width: 211px;
+    width: 300px;
   }
 `
 
