@@ -54,6 +54,7 @@ const NumberText = styled(Text)`
   color: white;
   font-size: 48px;
   font-weight: 700;  
+  font-family: 'kccfont-bold';
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 40px;
   }
@@ -75,9 +76,9 @@ const Title: React.FunctionComponent<TitleProps> = (props) => {
       <Col>
         {
           props.title === 'Join Our Community' && props.isMobile ? 
-          <Text color="white" fontSize={"32px"} fontWeight="700" style={{position: 'relative', zIndex: 1, marginBottom: '5px', marginTop: '-60px'}}>{props.title}</Text>
+          <Text color="white" fontSize={"32px"} fontWeight="700" style={{position: 'relative', zIndex: 1, marginBottom: '5px', marginTop: '-60px', fontFamily: 'kccfont-bold'}}>{props.title}</Text>
           :
-          <Text color="white" fontSize={props.isMobile ? "40px" : "52px"} fontWeight="700" style={{position: 'relative', zIndex: 1}}>{props.title}</Text>
+          <Text color="white" fontSize={props.isMobile ? "40px" : "52px"} fontWeight="700" style={{position: 'relative', zIndex: 1, fontFamily: 'kccfont-bold'}}>{props.title}</Text>
         }
         <Lines />
       </Col>

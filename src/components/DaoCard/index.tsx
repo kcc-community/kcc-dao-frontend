@@ -58,6 +58,7 @@ const Title = styled.div`
   font-weight: 700;
   margin-bottom: 16px;
   letter-spacing: 1.2px;
+  font-family: 'kccfont-bold'
 `
 
 const Content = styled.div`
@@ -69,10 +70,10 @@ const Content = styled.div`
 `
 
 const iconList = [
-  require('../../assets/images/home/dao-1.svg').default,
-  require('../../assets/images/home/dao-2.svg').default,
-  require('../../assets/images/home/dao-3.svg').default,
   require('../../assets/images/home/dao-4.svg').default,
+  require('../../assets/images/home/dao-3.svg').default,
+  require('../../assets/images/home/dao-2.svg').default,
+  require('../../assets/images/home/dao-1.svg').default,
 ]
 
 const DaoCard: React.FunctionComponent<TitleProps> = (props) => {
@@ -83,7 +84,7 @@ const DaoCard: React.FunctionComponent<TitleProps> = (props) => {
     <HomeDaoCard onMouseEnter={() => onHover(true)} onMouseLeave={() => onHover(false)} style={{marginRight: props.mr ? '36px' : '0'}}>
       {hover && <HomeDaoBg />}
       <ImgIcon src={iconList[props.index]}/>
-      <Title style={{fontSize: props.index === 3 ? '25px': '28px'}}>{props.title}</Title>
+      <Title style={{fontSize: '28px'}}>{props.title}</Title>
       <Content>{props.content}</Content>
     </HomeDaoCard>
   )
