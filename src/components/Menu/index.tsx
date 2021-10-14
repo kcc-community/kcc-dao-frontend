@@ -79,7 +79,7 @@ const Menu: React.FunctionComponent = (props) => {
   
   const renderMenu = (data, index) => {
     return(
-      <a onClick={() => history.push(data?.route)} key={index}>
+      <a onClick={() => { window.scrollTo(0, 0); history.push(data?.route)}} key={index}>
         <Text color={theme.colors.invertedContrast} fontSize="18px" fontWeight="500" ml="40px">{data?.title}</Text>
       </a>
     )

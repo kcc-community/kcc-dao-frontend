@@ -57,6 +57,7 @@ export const InfoCol = styled(Col)`
   align-items: center;
   width: 300px;
   margin-top: 20px;
+  cursor: pointer;
   ${({ theme }) => theme.mediaQueries.sm} {
     margin: 0 0 48px 0;
   }

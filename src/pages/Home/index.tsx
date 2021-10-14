@@ -6,7 +6,7 @@ import { RowBetween } from 'components/Row'
 import Col, { AutoColumn } from '../../components/Column'
 import Title from '../../components/Title'
 import { titleHome, featureRight, featureLeft } from '../../constants/imgs'
-import { media } from '../../constants/home'
+import { media, infoLink } from '../../constants/home'
 import Footer from '../../components/Footer'
 import DaoCard from '../../components/DaoCard'
 import CommunityCard from '../../components/CommunityCard'
@@ -54,17 +54,19 @@ const HomePage: React.FunctionComponent = (props) => {
   const InfoData = (title: string, num: number, key: number) => {
     return (
       <FadeInUp delay={key * 100}>
-        <LocalStyle.InfoCol style={{width: isTablet ? '200px' : '300px'}}>
-          <Text color={theme.colors.primary} fontWeight={'700'} fontSize="32px">
-            <CountUp 
-              start={0} 
-              end={num} 
-              decimals={0}
-              duration={key === 0 ? 1.5 : .5} 
-              separator=","/>
-          </Text>
-          <LocalStyle.SecondText style={{fontSize: '16px'}}>{title}</LocalStyle.SecondText>
-        </LocalStyle.InfoCol>
+        <a href={infoLink[key]} target={key === 1 ? "_self" : "_blank"}>
+          <LocalStyle.InfoCol style={{width: isTablet ? '200px' : '300px'}}>
+            <Text color={theme.colors.primary} fontWeight={'700'} fontSize="32px">
+              <CountUp 
+                start={0} 
+                end={num} 
+                decimals={0}
+                duration={key === 0 ? 1.5 : .5} 
+                separator=","/>
+            </Text>
+            <LocalStyle.SecondText style={{fontSize: '16px'}}>{title}</LocalStyle.SecondText>
+          </LocalStyle.InfoCol>
+        </a>
       </FadeInUp>
     )
   }
