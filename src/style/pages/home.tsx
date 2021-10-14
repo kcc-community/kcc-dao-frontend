@@ -33,10 +33,9 @@ export const ImgHomeTitle = styled.img`
 
 export const SecondText = styled(Text)`
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 1.2px;
   ${({ theme }) => theme.mediaQueries.sm} {
-    font-size: 16px;
     letter-spacing: 1.1px;
   }
 `
@@ -45,7 +44,7 @@ export const InfoContainer = styled(Row)`
   width: auto;
   position: relative;
   margin: 0 auto;
-  top: 284px;
+  top: 254px;
   ${({ theme }) => theme.mediaQueries.sm} {
     top: 112px;
   }
@@ -69,6 +68,7 @@ export const HomeDao = styled(RowBetween)`
 export const HomeFeatureRight = styled.img`
   width: 429px;
   height: 416px;
+  margin-right: 50px;
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 309px;
     height: 299px;
@@ -133,7 +133,7 @@ export const HomeCommunityCardBg = styled.div`
 
 export const HomeCommunityMedia = styled(RowBetween)`
   width: 648px;
-  margin: 69px auto 110px auto;
+  margin: 45px auto 110px auto;
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 211px;
   }
@@ -143,6 +143,13 @@ export const HomeCommunityMediaLink = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 160px;
+  width: 150px;
+  border-radius: 12px;
+  :hover {
+    background: #3B4252;
+  }
   ${({ theme }) => theme.mediaQueries.sm} {
     margin-bottom: 46px;
   }

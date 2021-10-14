@@ -32,9 +32,9 @@ export const MemberContainer = styled.div`
   }
 `
 
-export const MemberBtn = styled.div<{ isCategoryMr?: boolean }>`
+export const MemberBtn = styled.div<{ isCategoryMr?: boolean, width?: string  }>`
   height: 60px;
-  width: 120px;
+  width: ${({ width }) => width ?? '120px'};
   border-radius: 12px;
   background: #262C3A;
   color: white;
@@ -44,6 +44,10 @@ export const MemberBtn = styled.div<{ isCategoryMr?: boolean }>`
   line-height: 60px;
   margin-top: 73px;
   cursor: pointer;
+  :hover {
+    background: #3B4253;
+    color: ${({ theme }) => theme.colors.primary};
+  }
   ${({ theme }) => theme.mediaQueries.sm} {
     height: 40px;
     width: 100px;
@@ -54,9 +58,9 @@ export const MemberBtn = styled.div<{ isCategoryMr?: boolean }>`
   }
 `
 
-export const MemberBtnSec = styled.div<{ isCategoryMr?: boolean }>`
+export const MemberBtnSec = styled.div<{ isCategoryMr?: boolean, width?: string }>`
   height: 60px;
-  width: 120px;
+  width: ${({ width }) => width ?? '120px'};
   border-radius: 12px;
   background: ${({ theme }) => theme.colors.primary};
   color: white;
@@ -92,7 +96,6 @@ export const MemberAvatarContainer = styled(Row)`
 export const MemberAvatar = styled.img`
   height: 72px;
   width: 72px;
-  border-radius: 60px;
   ${({ theme }) => theme.mediaQueries.sm} {
     height: 48px;
     width: 48px;

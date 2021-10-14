@@ -132,16 +132,16 @@ const HomePage: React.FunctionComponent = (props) => {
           :
           <>
             <FadeInUp>
-              <RowBetween style={{maxWidth: '1100px', justifyContent: isTablet ? 'center' : 'space-between'}}>
+              <RowBetween style={{width: '1000px', justifyContent: isTablet ? 'center' : 'space-between'}}>
                 <Col>
                   <Title type="number" number={1} title={t('DAO_16')}/>
-                  <LocalStyle.SecondText mt="40px" style={{width: '550px', whiteSpace: 'pre-line'}}>{t('DAO_17')}</LocalStyle.SecondText>
+                  <LocalStyle.SecondText mt="40px" style={{width: '450px', whiteSpace: 'pre-line'}}>{t('DAO_17')}</LocalStyle.SecondText>
                 </Col>
                 <LocalStyle.HomeFeatureRight src={featureRight}/>
               </RowBetween>
             </FadeInUp>
             <FadeInUp>
-              <RowBetween style={{maxWidth: '1100px', marginTop: '95px', justifyContent: isTablet ? 'center' : 'space-between'}}>
+              <RowBetween style={{width: '1100px', marginTop: '95px', justifyContent: isTablet ? 'center' : 'space-between'}}>
                 {!isTablet && <LocalStyle.HomeFeatureLeft src={featureLeft}/>}
                 <Col>
                   <Title type="number" number={2} title={t('DAO_18')}/>
@@ -203,7 +203,7 @@ const HomePage: React.FunctionComponent = (props) => {
             <FadeInUp>
               <AutoColumn justify="center">
                 <LocalStyle.ImgHomeTitle src={titleHome}/>
-                <LocalStyle.SecondText mt={isMobile ? "20px" : "17px"} style={{width: isMobile ? '250px' : 'auto'}}>{t('DAO_0')}</LocalStyle.SecondText>
+                <LocalStyle.SecondText mt={isMobile ? "20px" : "17px"} style={{width: isMobile ? '250px' : 'auto'}} fontSize="18px">{t('DAO_0')}</LocalStyle.SecondText>
               </AutoColumn>
             </FadeInUp>
             <LocalStyle.InfoContainer>

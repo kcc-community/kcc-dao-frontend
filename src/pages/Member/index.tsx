@@ -64,8 +64,8 @@ const MemberPage: React.FunctionComponent = (props) => {
               {
                 category.map((item, index) => {
                   const isCategoryMr = isMobile ? (index + 1) % 3 === 0 ? false : true : false;
-                  if(tab === index) return <LocalStyle.MemberBtnSec onClick={() => setTab(index)} isCategoryMr={isCategoryMr}>{item}</LocalStyle.MemberBtnSec>
-                  return <LocalStyle.MemberBtn onClick={() => setTab(index)} isCategoryMr={isCategoryMr}>{item}</LocalStyle.MemberBtn>
+                  if(tab === index) return <LocalStyle.MemberBtnSec onClick={() => setTab(index)} isCategoryMr={isCategoryMr} width={index === 4 ? '140px' : '120px'}>{item}</LocalStyle.MemberBtnSec>
+                  return <LocalStyle.MemberBtn onClick={() => setTab(index)} isCategoryMr={isCategoryMr}  width={index === 4 ? '140px' : '120px'}>{item}</LocalStyle.MemberBtn>
                 })
               }
             </RowBetween>

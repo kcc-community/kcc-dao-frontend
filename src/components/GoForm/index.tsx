@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import styled, { useTheme } from 'styled-components'
 import { Text } from '../../style'
 import { useTranslation } from 'react-i18next'
+import $ from 'jquery'
 
 interface GoFormProps {
   isMobile?: boolean
@@ -10,6 +11,7 @@ interface GoFormProps {
 const imgs = {
   banner: require('../../assets/images/home/member-banner.png').default,
   send: require('../../assets/images/Icons/send.svg').default,
+  sendHover: require('../../assets/images/Icons/send-hover.svg').default,
 }
 
 const FormBg = styled.div`
@@ -40,6 +42,13 @@ const FormBtn = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: 16px;
+  font-weight: 700;
+  :hover{
+    background: #29CD97;
+    color: white !important;
+  }
 `
 
 const FormImgSend = styled.img`
@@ -50,15 +59,22 @@ const FormImgSend = styled.img`
 
 const GoForm: React.FunctionComponent<GoFormProps> = (props) => {
   const { t } = useTranslation()
-  const theme = useTheme()
+
+  useEffect(() => {
+    $('.formBtn').hover(function(){
+      $('.formBtnLogo').attr('src', imgs['sendHover'])
+    }, function(){
+      $('.formBtnLogo').attr('src', imgs['send'])
+    })
+  }, [])
 
   return (
     <FormContainer>
       <FormBg>
         <Text fontSize={props.isMobile ? "30px" : "40px"} color={"white"} fontWeight={"700"} style={{textAlign: 'center'}}>{t('DAO_26')}</Text>
-        <FormBtn>
-          <Text color={theme.colors.primary} fontSize={"16px"} fontWeight={"700"}>{t('DAO_27')}</Text>
-          <FormImgSend src={imgs['send']} />
+        <FormBtn className={'formBtn'}>
+          <div>{t('DAO_27')}</div>
+          <FormImgSend src={imgs['send']} className={'formBtnLogo'}/>
         </FormBtn>
       </FormBg>
     </FormContainer>
