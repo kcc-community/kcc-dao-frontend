@@ -45,7 +45,7 @@ export const ambassadorList = {
     {
       name: 'Cain',
       avatar: require('../assets/images/ambassador/man-2.png').default,
-      desc: 'Coming soon',
+      desc: 'Nine years of software development background and three years of blockchain research and development background, focusing on the research and exploration of application layer, familiar with public chain and defi, also a DAO enthusiast.',
     },
     {
       name: 'Sam',

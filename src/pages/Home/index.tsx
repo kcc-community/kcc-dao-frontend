@@ -200,7 +200,6 @@ const HomePage: React.FunctionComponent = (props) => {
   return (
       <>
         <Container width={pageWidth}>
-          {/* <img src={require('../../assets/images/home/member.gif').default} style={{width: '1200px', height: '600px'}}/> */}
           <LocalStyle.HomeBackground>
             <FadeInUp isH5>
               <AutoColumn justify="center">
