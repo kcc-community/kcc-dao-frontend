@@ -81,8 +81,8 @@ const MemberPage: React.FunctionComponent = (props) => {
             </RowBetween>
           {/* </FadeInUp> */}
           {(tab === 0 || tab === 1) && renderList(t('DAO_29'), ambassadorList['Engineer'])}
-          {(tab === 0 || tab === 2) && renderList(t('DAO_30'), ambassadorList['Marketing'])}
-          {(tab === 0 || tab === 3) && renderList(t('DAO_31'), ambassadorList['Adviser'])}
+          {(tab === 0 || tab === 2) && renderList(t('DAO_30'), ambassadorList['Operation'])}
+          {(tab === 0 || tab === 3) && renderList(t('DAO_31'), ambassadorList['Advisor'])}
         {(tab === 0 || tab === 4) && renderList(t('DAO_32'), ambassadorList['Ambassador'])}
         </LocalStyle.MemberContainer>
       </Container>

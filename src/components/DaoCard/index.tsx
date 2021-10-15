@@ -62,7 +62,7 @@ const Title = styled.div`
 `
 
 const Content = styled.div`
-  color: #E1E8F5;
+  color: #E1E8F5CC;
   font-size: 14px;
   line-height: 28px;
   word-break: keep-all;

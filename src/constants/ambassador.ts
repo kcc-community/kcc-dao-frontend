@@ -35,30 +35,35 @@ export const ambassadorList = {
       avatar: require('../assets/images/ambassador/man-1.png').default,
       desc: 'Focus on blockchain product design for more than four years, a fans of KCS and KuCoin.Also a fan of Nakamoto.',
     },
+    {
+      name: 'Joker',
+      avatar: require('../assets/images/ambassador/man-3.png').default,
+      desc: 'Eight years of website design and development experience, full of passion for blockchain.',
+    },
   ],
-  Marketing: [
+  Operation: [
     {
-      name: 'Tom',
-      avatar: require('../assets/images/ambassador/female-3.png').default,
-      desc: 'Coming soon',
-    },
-    {
-      name: 'Tom',
-      avatar: require('../assets/images/ambassador/female-4.png').default,
-      desc: 'Coming soon',
-    },
-    {
-      name: 'Tom',
-      avatar: require('../assets/images/ambassador/man-1.png').default,
-      desc: 'Coming soon',
-    },
-    {
-      name: 'Tom',
+      name: 'Cain',
       avatar: require('../assets/images/ambassador/man-2.png').default,
       desc: 'Coming soon',
     },
+    {
+      name: 'Sam',
+      avatar: require('../assets/images/ambassador/man-4.png').default,
+      desc: 'Coming soon',
+    },
+    {
+      name: 'Casey',
+      avatar: require('../assets/images/ambassador/female-2.png').default,
+      desc: 'Coming soon',
+    },
+    {
+      name: 'Bin',
+      avatar: require('../assets/images/ambassador/man-3.png').default,
+      desc: 'Coming soon',
+    },
   ],
-  Adviser: [
+  Advisor: [
     {
       name: 'Tom',
       avatar: require('../assets/images/ambassador/female-1.png').default,
