@@ -7,9 +7,17 @@ interface FadeUpProps {
   delay?: number
   onClick?: () => void 
   playScale?: number
+  isH5?: boolean
 }
 
-export function FadeInUp({ children, playScale = 0.1, delay, onClick }: FadeUpProps) {
+export function FadeInUp({ children, playScale = 0.1, delay, onClick, isH5 }: FadeUpProps) {
+  if(isH5){
+    return(
+      <>
+        {children}
+      </>
+    )
+  }
   return (
     // @ts-ignore
     <OverPack playScale={playScale} replay={false} always={false}>

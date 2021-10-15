@@ -53,7 +53,7 @@ const HomePage: React.FunctionComponent = (props) => {
 
   const InfoData = (title: string, num: number, key: number) => {
     return (
-      <FadeInUp delay={key * 100}>
+      <FadeInUp delay={key * 100} isH5>
         <a href={infoLink[key]} target={key === 1 ? "_self" : "_blank"}>
           <LocalStyle.InfoCol style={{width: isTablet ? '200px' : '300px'}}>
             <Text color={theme.colors.primary} fontWeight={'700'} fontSize="32px">
@@ -74,19 +74,19 @@ const HomePage: React.FunctionComponent = (props) => {
   const renderDAO = () => {
     return(
       <Col style={{alignItems: 'center'}}>
-        <FadeInUp>
+        <FadeInUp isH5>
           <Col style={{alignItems: 'center'}}>
             <Title type="lines" title={t('DAO_4')} isMobile={isMobile}/>
             <LocalStyle.SecondText mt={isMobile ? "20px" : "36px"} mb={isMobile ? "32px" : "92px"} style={{maxWidth: isMobile ? '330px' : '850px', textAlign: 'center', whiteSpace: 'pre-line'}}>{t('DAO_5')}</LocalStyle.SecondText>
           </Col>
         </FadeInUp>
-        <FadeInUp>
+        <FadeInUp isH5>
           <LocalStyle.HomeDao style={{justifyContent: isTablet || isMobile ? 'center' : 'space-between'}}>
             <DaoCard index={0} title={t('DAO_6')} content={t('DAO_7')} mr={!isTablet && !isMobile}/>
             <DaoCard index={1} title={t('DAO_8')} content={t('DAO_9')} />
           </LocalStyle.HomeDao>
         </FadeInUp>
-        <FadeInUp>
+        <FadeInUp isH5>
           <LocalStyle.HomeDao style={{justifyContent: isTablet || isMobile  ? 'center' : 'space-between'}}>
             <DaoCard index={2} title={t('DAO_10')} content={t('DAO_11')} mr={!isTablet && !isMobile}/>
             <DaoCard index={3} title={t('DAO_12')} content={t('DAO_13')}/>
@@ -108,23 +108,23 @@ const HomePage: React.FunctionComponent = (props) => {
         {
           isMobile ?
           <div style={{width: '100vw', marginTop: '120px'}}>
-            <FadeInUp>
+            <FadeInUp isH5>
               <AutoColumn justify="center">
                 <LocalStyle.HomeFeatureRight src={featureRight}/>
               </AutoColumn>
             </FadeInUp>
-            <FadeInUp>
+            <FadeInUp isH5>
               <Col style={{alignItems: 'center'}}>
                 <Title type="number" number={1} title={t('DAO_16')}/>
                 <LocalStyle.SecondText mt="30px" style={{width: '300px', whiteSpace: 'pre-line', marginLeft: '20px'}}>{t('DAO_17')}</LocalStyle.SecondText>
               </Col>
             </FadeInUp>
-            <FadeInUp>
+            <FadeInUp isH5>
               <AutoColumn justify="center">
                 <LocalStyle.HomeFeatureLeft src={featureLeft}/>
               </AutoColumn>
             </FadeInUp>
-            <FadeInUp>
+            <FadeInUp isH5>
               <Col style={{alignItems: 'center'}}>
                 <Title type="number" number={2} title={t('DAO_18')}/>
                 <LocalStyle.SecondText mt="25px" style={{width: '300px', marginLeft: '20px'}}>{t('DAO_19')}</LocalStyle.SecondText>
@@ -169,19 +169,19 @@ const HomePage: React.FunctionComponent = (props) => {
 
   const renderCommunity = () => {
     return(
-      <FadeInUp>
+      <FadeInUp isH5>
         <LocalStyle.HomeCommunityCard>
           <LocalStyle.HomeCommunityCardContainer>
             <LocalStyle.HomeCommunityCardBg />
           </LocalStyle.HomeCommunityCardContainer>
-          <FadeInUp>
+          <FadeInUp isH5>
             <Col style={{alignItems: 'center', paddingTop: isMobile ? '0' : '70px'}}>
               <Title type="lines" title={t('DAO_20')} isMobile={isMobile}/>
               <LocalStyle.SecondText mt={isMobile ? "15px" : "30px"} style={{textAlign: 'center'}}>{t('DAO_21')}</LocalStyle.SecondText>
               <LocalStyle.SecondText mt="5px" style={{textAlign: 'center'}}>{t('DAO_22')}</LocalStyle.SecondText>
             </Col>
           </FadeInUp>
-          <FadeInUp>
+          <FadeInUp isH5>
             <LocalStyle.HomeCommunityMedia>
               {media.map((item, index) => renderMedia(index))}
             </LocalStyle.HomeCommunityMedia>
@@ -202,7 +202,7 @@ const HomePage: React.FunctionComponent = (props) => {
         <Container width={pageWidth}>
           {/* <img src={require('../../assets/images/home/member.gif').default} style={{width: '1200px', height: '600px'}}/> */}
           <LocalStyle.HomeBackground>
-            <FadeInUp>
+            <FadeInUp isH5>
               <AutoColumn justify="center">
                 <LocalStyle.ImgHomeTitle src={titleHome}/>
                 <LocalStyle.SecondText mt={isMobile ? "20px" : "17px"} style={{width: isMobile ? '250px' : 'auto'}} fontSize="18px">{t('DAO_0')}</LocalStyle.SecondText>

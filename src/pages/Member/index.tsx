@@ -55,7 +55,7 @@ const MemberPage: React.FunctionComponent = (props) => {
   return (
     <>
       <Container style={{ minHeight: '80vh' }} width={pageWidth}>
-        <FadeInUp>
+        <FadeInUp isH5>
           <AutoColumn justify="center">
             <LocalStyle.ImgMemberTitle src={titleMember}/>
             <LocalStyle.SecondText mt={isMobile ? "20px" : "17px"} style={{width: isMobile ? '210px' : 'auto', textAlign: 'center'}}>{t('DAO_25')}</LocalStyle.SecondText>

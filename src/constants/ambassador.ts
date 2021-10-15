@@ -13,7 +13,7 @@ export const ambassadorList = {
     {
       name: 'Neo',
       avatar: require('../assets/images/ambassador/man-3.png').default,
-      desc: 'Coming soon',
+      desc: 'Blockchain and web developer, focusing on server-side development, loves technology and cryptocurrency.',
     },
     {
       name: 'Corki',
