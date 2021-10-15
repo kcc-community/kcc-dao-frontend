@@ -81,13 +81,13 @@ const HomePage: React.FunctionComponent = (props) => {
           </Col>
         </FadeInUp>
         <FadeInUp isH5>
-          <LocalStyle.HomeDao style={{justifyContent: isTablet || isMobile ? 'center' : 'space-between'}}>
+          <LocalStyle.HomeDao style={{justifyContent: 'center'}}>
             <DaoCard index={0} title={t('DAO_6')} content={t('DAO_7')} mr={!isTablet && !isMobile}/>
             <DaoCard index={1} title={t('DAO_8')} content={t('DAO_9')} />
           </LocalStyle.HomeDao>
         </FadeInUp>
         <FadeInUp isH5>
-          <LocalStyle.HomeDao style={{justifyContent: isTablet || isMobile  ? 'center' : 'space-between'}}>
+          <LocalStyle.HomeDao style={{justifyContent: 'center'}}>
             <DaoCard index={2} title={t('DAO_10')} content={t('DAO_11')} mr={!isTablet && !isMobile}/>
             <DaoCard index={3} title={t('DAO_12')} content={t('DAO_13')}/>
           </LocalStyle.HomeDao>

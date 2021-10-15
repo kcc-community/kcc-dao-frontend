@@ -50,7 +50,7 @@ export const ambassadorList = {
     {
       name: 'Sam',
       avatar: require('../assets/images/ambassador/man-4.png').default,
-      desc: 'Coming soon',
+      desc: 'Having graduated from University of Wisconsin-Madison and succeeded in prominent companies like Deloitte Consulting and Amway Global previously, Sam brings his high level of expertise in business operation and leadership/organizational development to KCC.',
     },
     {
       name: 'Casey',

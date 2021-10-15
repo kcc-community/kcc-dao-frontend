@@ -47,7 +47,7 @@ const Inner = styled.div`
 `
 
 const ImgLogo = styled.img`
-  height: 22px;
+  height: 16.8px;
   cursor: pointer;
   ${({ theme }) => theme.mediaQueries.sm} {
     height: auto;

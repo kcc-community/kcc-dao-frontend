@@ -32,7 +32,7 @@ const FormContainer = styled.div`
   width: 100%;
 `
 
-const FormBtn = styled.div`
+const FormBtn = styled.a`
   width: 345px;
   height: 48px;
   background: #FFFFFF;
@@ -72,7 +72,7 @@ const GoForm: React.FunctionComponent<GoFormProps> = (props) => {
     <FormContainer>
       <FormBg>
         <Text fontSize={props.isMobile ? "30px" : "40px"} color={"white"} fontWeight={"700"} style={{textAlign: 'center'}}>{t('DAO_26')}</Text>
-        <FormBtn className={'formBtn'}>
+        <FormBtn className={'formBtn'} href="https://forms.office.com/r/WjXJNCwqz3" target="_blank">
           <div>{t('DAO_27')}</div>
           <FormImgSend src={imgs['send']} className={'formBtnLogo'}/>
         </FormBtn>
