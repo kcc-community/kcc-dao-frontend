@@ -55,7 +55,7 @@ export const ambassadorList = {
     {
       name: 'Casey',
       avatar: require('../assets/images/ambassador/female-2.png').default,
-      desc: 'Coming soon',
+      desc: 'Having rich operating experience in large-scale Internet companies, successful large-scale Defi project promotion manager and team management experience.Be good at user growth and data analysis.',
     },
     {
       name: 'Bin',
