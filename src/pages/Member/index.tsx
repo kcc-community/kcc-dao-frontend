@@ -19,7 +19,7 @@ const MemberPage: React.FunctionComponent = (props) => {
   const { isTablet, isMobile } = useResponsive();
   const [tab, setTab] = useState(0);
   const pageWidth = isMobile ? '100vw' : (isTablet ? '768px' : '1200px');
-  const category = [t('DAO_28'), t('DAO_29'), t('DAO_30'), t('DAO_31'), t('DAO_32')];
+  const category = [t('DAO_28'), t('DAO_29'), t('DAO_30'), t('DAO_32')];
 
   const renderIcon = (data: any, index: number) => {
     const isWebMr = (index + 1) % 4 === 0 ? false : true;
@@ -82,8 +82,8 @@ const MemberPage: React.FunctionComponent = (props) => {
           {/* </FadeInUp> */}
           {(tab === 0 || tab === 1) && renderList(t('DAO_29'), ambassadorList['Engineer'])}
           {(tab === 0 || tab === 2) && renderList(t('DAO_30'), ambassadorList['Operation'])}
-          {(tab === 0 || tab === 3) && renderList(t('DAO_31'), ambassadorList['Advisor'])}
-        {(tab === 0 || tab === 4) && renderList(t('DAO_32'), ambassadorList['Ambassador'])}
+          {/* {(tab === 0 || tab === 3) && renderList(t('DAO_31'), ambassadorList['Advisor'])} */}
+        {(tab === 0 || tab === 3) && renderList(t('DAO_32'), ambassadorList['Ambassador'])}
         </LocalStyle.MemberContainer>
       </Container>
       <GoForm isMobile={isMobile}/>

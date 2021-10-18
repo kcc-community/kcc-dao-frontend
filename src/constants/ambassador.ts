@@ -60,7 +60,7 @@ export const ambassadorList = {
     {
       name: 'Bin',
       avatar: require('../assets/images/ambassador/man-3.png').default,
-      desc: 'Coming soon',
+      desc: '6 years of digital marketing and operation background, and focus on the cryptocurrency industry in the last 3 years. Love cryptocurrency, familiar with Mining, Exchange, DeFi, etc.',
     },
   ],
   Advisor: [
@@ -77,9 +77,47 @@ export const ambassadorList = {
   ],
   Ambassador: [
     {
-      name: 'Tom',
-      avatar: require('../assets/images/ambassador/man-1.png').default,
+      name: 'Juanma',
+      avatar: require('../assets/images/ambassador/man-4.png').default,
       desc: 'Coming soon',
     },
+    {
+      name: 'William ',
+      avatar: require('../assets/images/ambassador/man-3.png').default,
+      desc: 'Coming soon',
+    },
+    {
+      name: 'Eneko',
+      avatar: require('../assets/images/ambassador/man-1.png').default,
+      desc: 'Coming soon',
+    },{
+      name: 'Svyatoslav',
+      avatar: require('../assets/images/ambassador/man-2.png').default,
+      desc: 'Coming soon',
+    },{
+      name: 'Micky',
+      avatar: require('../assets/images/ambassador/man-2.png').default,
+      desc: 'Coming soon',
+    },{
+      name: 'Rashad',
+      avatar: require('../assets/images/ambassador/man-1.png').default,
+      desc: 'Coming soon',
+    },{
+      name: 'Eugene',
+      avatar: require('../assets/images/ambassador/man-3.png').default,
+      desc: 'Coming soon',
+    },{
+      name: 'Isah',
+      avatar: require('../assets/images/ambassador/man-4.png').default,
+      desc: 'Coming soon',
+    },{
+      name: 'Alex',
+      avatar: require('../assets/images/ambassador/man-3.png').default,
+      desc: 'Coming soon',
+    },{
+      name: 'Sorbitov',
+      avatar: require('../assets/images/ambassador/man-2.png').default,
+      desc: 'Coming soon',
+    }
   ],
 }
