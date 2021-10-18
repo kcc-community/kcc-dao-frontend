@@ -2,7 +2,7 @@ export const ambassadorList = {
   Engineer: [
     {
       name: 'Leandre',
-      avatar: require('../assets/images/ambassador/man-1.png').default,
+      avatar: require('../assets/images/ambassador/man-3.png').default,
       desc: 'Blockchain and web developer. First contact with blockchain and cryptocurrency in 2018. One of the loyal fans and holders of KCS and KuCoin. One of the leads of KCC.',
     },
     {
@@ -32,7 +32,7 @@ export const ambassadorList = {
     },
     {
       name: 'Mike',
-      avatar: require('../assets/images/ambassador/man-1.png').default,
+      avatar: require('../assets/images/ambassador/man-4.png').default,
       desc: 'Focus on blockchain product design for more than four years, a fans of KCS and KuCoin.Also a fan of Nakamoto.',
     },
     {
@@ -65,14 +65,9 @@ export const ambassadorList = {
   ],
   Advisor: [
     {
-      name: 'Tom',
-      avatar: require('../assets/images/ambassador/female-1.png').default,
-      desc: 'Coming soon',
-    },
-    {
-      name: 'Tom',
-      avatar: require('../assets/images/ambassador/female-2.png').default,
-      desc: 'Coming soon',
+      name: 'Johnny',
+      avatar: require('../assets/images/ambassador/man-2.png').default,
+      desc: 'CEO at KuCoin',
     },
   ],
   Ambassador: [
