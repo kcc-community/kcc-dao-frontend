@@ -66,7 +66,7 @@ export const ambassadorList = {
   Advisor: [
     {
       name: 'Johnny',
-      avatar: require('../assets/images/ambassador/man-2.png').default,
+      avatar: require('../assets/images/ambassador/man-3.png').default,
       desc: 'CEO at KuCoin',
     },
   ],
@@ -79,12 +79,12 @@ export const ambassadorList = {
     {
       name: 'William ',
       avatar: require('../assets/images/ambassador/man-3.png').default,
-      desc: 'Coming soon',
+      desc: 'As alumni of Indiana University Bloomington and one of the top blockchain influencers in China who founded the Digital World, William aims to bring his influence and organizational development experience to KCC, making it a great public chain in the crypto space.',
     },
     {
       name: 'Eneko',
       avatar: require('../assets/images/ambassador/man-1.png').default,
-      desc: 'Coming soon',
+      desc: 'More than 20 Years of experience in IT and Security Infrastructures. Working for differents consultant companies. Since 2017 working with cryptocurrencies and blockchain. Have done a lot of Blockchain and crypto meetups.',
     },{
       name: 'Svyatoslav',
       avatar: require('../assets/images/ambassador/man-2.png').default,
@@ -92,11 +92,11 @@ export const ambassadorList = {
     },{
       name: 'Micky',
       avatar: require('../assets/images/ambassador/man-2.png').default,
-      desc: 'Coming soon',
+      desc: "Coming from birthplace of many crypto exchange, I'm passionate about blockchain and its impact on all of us. Let's work together to make KCC one of the best chain out there!",
     },{
       name: 'Rashad',
       avatar: require('../assets/images/ambassador/man-1.png').default,
-      desc: 'Coming soon',
+      desc: "I'm a Crypto Influencer and Financial Content Creator in Azerbaijan. As a Hacettepe University Master of Economics graduate, I have been working in Crypto and Blockchain since 2017, which is as important as the birth of the Internet. KCC will take Blockchain to another level.",
     },{
       name: 'Eugene',
       avatar: require('../assets/images/ambassador/man-3.png').default,
@@ -104,7 +104,7 @@ export const ambassadorList = {
     },{
       name: 'Isah',
       avatar: require('../assets/images/ambassador/man-4.png').default,
-      desc: 'Coming soon',
+      desc: 'I’m a crypto enthusiast and a digital marketing specialist. I’ve been working on blockchain technology since late 2018. I have experience in social media management, community management, and content writing. I have a passion for contributing to open source and community building projects and also have a great interest in reading, teaching, and computing.',
     },{
       name: 'Alex',
       avatar: require('../assets/images/ambassador/man-3.png').default,
