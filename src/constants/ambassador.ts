@@ -79,7 +79,7 @@ export const ambassadorList = {
     {
       name: 'Juanma',
       avatar: require('../assets/images/ambassador/man-4.png').default,
-      desc: 'Coming soon',
+      desc: 'Degree In Law in ULPGC University,Degree in Airport Management in ULPG, Degree as Air Traffic Controller in SENASA, Degree in Electronic Commerce in IEBS. ex CEO at Elescritor.com, first Spanish language editorial online. Product Manager at Cryptonumbers.io .Member of DeFiLabs. Blockchain active user and enthusiast since crypto Bronze Age Involved in crypto scenarios as a user and as an entrepreneur. Intense DeFi user. Looking always for new paths of independence and decentralization. ',
     },
     {
       name: 'William ',
