@@ -69,6 +69,11 @@ export const ambassadorList = {
       avatar: require('../assets/images/ambassador/man-3.png').default,
       desc: 'CEO at KuCoin',
     },
+    {
+      name: 'Jeff',
+      avatar: require('../assets/images/ambassador/man-4.png').default,
+      desc: 'Engineer turned operations specialist with over a decade of experience in SaaS, AI, IoT, and blockchain, Jeff brings unique and powerful expertise to the table.He is versed in getting teams access to resources and direction to build effectively, and is here to do exactly that for GoDao.',
+    },
   ],
   Ambassador: [
     {
