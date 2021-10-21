@@ -93,7 +93,7 @@ export const ambassadorList = {
     },{
       name: 'Svyatoslav',
       avatar: require('../assets/images/ambassador/man-2.png').default,
-      desc: 'Coming soon',
+      desc: 'My name is Svyatoslav, I am a crypto enthusiast from Russia. In this area since 2017. I professional graphic designer, articles writer. In recent years, I have been able to participate in many strong projects as an ambassador and content creator. My hobby is to create NFT and draw graphics.',
     },{
       name: 'Micky',
       avatar: require('../assets/images/ambassador/man-2.png').default,
@@ -105,19 +105,19 @@ export const ambassadorList = {
     },{
       name: 'Eugene',
       avatar: require('../assets/images/ambassador/man-3.png').default,
-      desc: 'Coming soon',
+      desc: "I'm an experienced video creator from Ukraine, managing two YouTube channels in English and Russian languages, looking to create quality content to help and educate users. Very excited about our decentralized blockchain future and always open to learning something new and challenging.",
     },{
       name: 'Isah',
       avatar: require('../assets/images/ambassador/man-4.png').default,
       desc: 'I’m a crypto enthusiast and a digital marketing specialist. I’ve been working on blockchain technology since late 2018. I have experience in social media management, community management, and content writing. I have a passion for contributing to open source and community building projects and also have a great interest in reading, teaching, and computing.',
     },{
-      name: 'Alex',
+      name: 'AWAS',
       avatar: require('../assets/images/ambassador/man-3.png').default,
-      desc: 'Coming soon',
+      desc: "I have been a regular developer for about 4 years and I moved to Blockchain development about a year ago. My main experience is with solidity and web3 development. Not only am I developing in the space, but I'm also investing in various defi plattforms.",
     },{
       name: 'Sorbitov',
       avatar: require('../assets/images/ambassador/man-2.png').default,
-      desc: 'Coming soon',
+      desc: "I'm Alex! From Russia with love! I am fluent in Russian and English. I am a professional content creator - videos, articles, memes. Youtuber, leading YouTube channel, where I post my content. Provide information support and promotion of crypto projects.Also my hobby is launching nodes - I used to participate in events like Coda, Phala, Hopr Moonbeam.",
     }
   ],
 }

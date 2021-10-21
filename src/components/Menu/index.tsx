@@ -28,7 +28,7 @@ const StyledNav = styled.nav`
   z-index: 20;
   transform: translate3d(0, 0, 0);
   ${({ theme }) => theme.mediaQueries.sm} {
-    padding: 0 32px;
+    padding: 0 15px;
   }
 `
 
@@ -51,8 +51,24 @@ const ImgLogo = styled.img`
   cursor: pointer;
   ${({ theme }) => theme.mediaQueries.sm} {
     height: auto;
-    width: 91px;
+    width: 69.8px;
   }
+`
+
+const ImgKccLogo = styled.img`
+  height: 33px;
+  cursor: pointer;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    height: auto;
+    height: 26px;
+  }
+`
+
+const ImgLines = styled.div`
+  background: #596171;
+  width: 2px;
+  height: 19px;
+  margin: 0 12px;
 `
 
 interface MenuList {
@@ -80,7 +96,7 @@ const Menu: React.FunctionComponent = (props) => {
   const renderMenu = (data, index) => {
     return(
       <a onClick={() => { window.scrollTo(0, 0); history.push(data?.route)}} key={index}>
-        <Text color={theme.colors.invertedContrast} fontSize="18px" fontWeight="500" ml="40px">{data?.title}</Text>
+        <Text color={theme.colors.invertedContrast} fontSize="18px" fontWeight="500" ml={isMobile ? "24px" : "40px"}>{data?.title}</Text>
       </a>
     )
   }
@@ -90,6 +106,10 @@ const Menu: React.FunctionComponent = (props) => {
       <StyledNav>
         <RowBetween style={{maxWidth: '1200px', margin: '0 auto'}}>
           <RowFixed>
+            <a href="https://www.kcc.io/#/" target="_blank">
+              <ImgKccLogo src={require('../../assets/images/home/kcc.png').default}/>
+            </a>
+            <ImgLines />
             <ImgLogo src={require('../../assets/images/home/logo.png').default} onClick={() => history.push('/')}/>
             { menuList.map((item, index) => renderMenu(item, index)) }
           </RowFixed>
