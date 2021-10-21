@@ -113,7 +113,7 @@ export const HomeCommunityCardContainer = styled.div`
   overflow: hidden;
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 341px;
-    height: 661px;
+    height: 280px;
   }
 `
 

@@ -13,7 +13,7 @@ interface FadeUpProps {
 export function FadeInUp({ children, playScale = 0.1, delay, onClick, isH5 }: FadeUpProps) {
   if(isH5){
     return(
-      <div style={{ display: 'inherit', pointerEvents: 'auto' }}>
+      <div onClick={onClick} style={{ display: 'inherit', pointerEvents: 'auto' }}>
         {children}
       </div>
     )
