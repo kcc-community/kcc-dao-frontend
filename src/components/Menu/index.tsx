@@ -58,6 +58,7 @@ const ImgLogo = styled.img`
 const ImgKccLogo = styled.img`
   height: 33px;
   cursor: pointer;
+  margin-top: 3px;
   ${({ theme }) => theme.mediaQueries.sm} {
     height: auto;
     height: 26px;
