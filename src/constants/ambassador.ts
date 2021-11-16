@@ -118,6 +118,16 @@ export const ambassadorList = {
       name: 'Sorbitov',
       avatar: require('../assets/images/ambassador/man-2.png').default,
       desc: "I'm Alex! From Russia with love! I am fluent in Russian and English. I am a professional content creator - videos, articles, memes. Youtuber, leading YouTube channel, where I post my content. Provide information support and promotion of crypto projects.Also my hobby is launching nodes - I used to participate in events like Coda, Phala, Hopr Moonbeam.",
+    },
+    {
+      name: 'Renato',
+      avatar: require('../assets/images/ambassador/man-3.png').default,
+      desc: "Passionate about crypto assets since 2015. Once I ventured into this world of crypts, I never got out of it. More and more passionate about blockchain technology and everything it has added to our lives. I am a versatile person, Lover of knowledge and always chasing something new and challenging. I believe this world of cryptography is the future, and as such, we are part of this story!",
+    },
+    {
+      name: 'Pavel',
+      avatar: require('../assets/images/ambassador/man-1.png').default,
+      desc: "I'm a designer and developer from Ukraine, passionate about cutting edge technologies, blockchain and I believe in a future where cryptocurrencies will be a part of our usual life. ",
     }
   ],
 }
