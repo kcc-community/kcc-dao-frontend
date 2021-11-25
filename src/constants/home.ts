@@ -37,7 +37,7 @@ export const media = [
 
 export const infoLink = [
   'https://explorer.kcc.io/',
-  '/#/member',
+  '/member',
   'https://snapshot.org/#/kcc.eth',
 ]
 

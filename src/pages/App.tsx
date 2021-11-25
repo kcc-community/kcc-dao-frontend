@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect } from 'react'
-import { HashRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 import { useResponsive } from 'utils/responsive'
 
@@ -29,7 +29,7 @@ export default function App() {
 
   return (
     <Suspense fallback={null}>
-      <HashRouter>
+      <BrowserRouter>
         <AppWrapper>
           <Menu>
             <BodyWrapper>
@@ -42,7 +42,7 @@ export default function App() {
             </BodyWrapper>
           </Menu>
         </AppWrapper>
-      </HashRouter>
+      </BrowserRouter>
     </Suspense>
   )
 }
