@@ -16,6 +16,7 @@ import { useResponsive } from 'utils/responsive'
 import { ApiService, useLoading } from '../../api'
 import { useTranslation } from 'react-i18next'
 import { useHistory } from 'react-router'
+import Helmet from 'react-helmet'
 
 
 const HomePage: React.FunctionComponent = (props) => {
@@ -198,27 +199,40 @@ const HomePage: React.FunctionComponent = (props) => {
   }
 
   return (
-      <>
-        <Container width={pageWidth}>
-          <LocalStyle.HomeBackground>
-            <FadeInUp isH5={isMobile}>
-              <AutoColumn justify="center">
-                <LocalStyle.ImgHomeTitle src={titleHome}/>
-                <LocalStyle.SecondText mt={isMobile ? "20px" : "17px"} style={{width: isMobile ? '250px' : 'auto'}} fontSize="18px">{t('DAO_0')}</LocalStyle.SecondText>
-              </AutoColumn>
-            </FadeInUp>
-            <LocalStyle.InfoContainer>
-              {InfoData(t('DAO_1'), info.address, 0)}
-              {InfoData(t('DAO_2'), info.member, 1)}
-              {InfoData(t('DAO_3'), info.proposal, 2)}
-            </LocalStyle.InfoContainer>
-          </LocalStyle.HomeBackground>
-          {renderDAO()}
-          {renderFeatures()}
-          {renderCommunity()}
-        </Container>
-        <Footer transparent={true} isMobile={isMobile}/>
-      </>
+    <>
+      <Helmet>
+        <title>GoDao - Let Every Member of the KCS Community can Participate in KCC Decision-making</title>
+        <meta
+          name="description"
+          content="GoDAO is a DAO built by KCC community and KCS token holders. It is the main way for community users to directly participate in the development and management of KCC."
+        />
+      </Helmet>
+      <Container width={pageWidth}>
+        <LocalStyle.HomeBackground>
+          <FadeInUp isH5={isMobile}>
+            <AutoColumn justify="center">
+              <LocalStyle.ImgHomeTitle src={titleHome} />
+              <LocalStyle.SecondText
+                mt={isMobile ? '20px' : '17px'}
+                style={{ width: isMobile ? '250px' : 'auto' }}
+                fontSize="18px"
+              >
+                {t('DAO_0')}
+              </LocalStyle.SecondText>
+            </AutoColumn>
+          </FadeInUp>
+          <LocalStyle.InfoContainer>
+            {InfoData(t('DAO_1'), info.address, 0)}
+            {InfoData(t('DAO_2'), info.member, 1)}
+            {InfoData(t('DAO_3'), info.proposal, 2)}
+          </LocalStyle.InfoContainer>
+        </LocalStyle.HomeBackground>
+        {renderDAO()}
+        {renderFeatures()}
+        {renderCommunity()}
+      </Container>
+      <Footer transparent={true} isMobile={isMobile} />
+    </>
   )
 }
 
