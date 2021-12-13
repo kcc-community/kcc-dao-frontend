@@ -40,6 +40,11 @@ export const ambassadorList = {
       avatar: require('../assets/images/ambassador/man-3.png').default,
       desc: 'Eight years of website design and development experience, full of passion for blockchain.',
     },
+    {
+      name: 'Cary',
+      avatar: require('../assets/images/ambassador/man-3.png').default,
+      desc: 'Focus on Backend developing for more than 7 years, with experience in High-Concurrent Network Server, and Distributed Systems. Developing Decentralized Blockchain Applications start in 2017.',
+    },
   ],
   Operation: [
     {
@@ -61,6 +66,11 @@ export const ambassadorList = {
       name: 'Bin',
       avatar: require('../assets/images/ambassador/man-3.png').default,
       desc: '6 years of digital marketing and operation background, and focus on the cryptocurrency industry in the last 3 years. Love cryptocurrency, familiar with Mining, Exchange, DeFi, etc.',
+    },
+    {
+      name: 'Summer',
+      avatar: require('../assets/images/ambassador/female-2.png').default,
+      desc: 'A young profession with a master’s degree in Corporate and Organizational Communication at Northeastern University. Summer is an energetic, ambitious person who possesses a broad knowledge of marketing and business development as well as a deep understanding of blockchain technology. ',
     },
   ],
   Advisor: [
