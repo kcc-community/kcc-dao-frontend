@@ -13,36 +13,41 @@ import { useResponsive } from 'utils/responsive'
 import Footer from '../../components/Footer'
 import { FadeInUp } from 'utils/animation'
 import { Img } from 'react-image'
+import Helmet from 'react-helmet'
 
 const MemberPage: React.FunctionComponent = (props) => {
-  const { t } = useTranslation();
-  const { isTablet, isMobile } = useResponsive();
-  const [tab, setTab] = useState(0);
-  const pageWidth = isMobile ? '100vw' : (isTablet ? '768px' : '1200px');
-  const category = [t('DAO_28'), t('DAO_29'), t('DAO_30'),t('DAO_31'), t('DAO_32')];
+  const { t } = useTranslation()
+  const { isTablet, isMobile } = useResponsive()
+  const [tab, setTab] = useState(0)
+  const pageWidth = isMobile ? '100vw' : isTablet ? '768px' : '1200px'
+  const category = [t('DAO_28'), t('DAO_29'), t('DAO_30'), t('DAO_31'), t('DAO_32')]
 
   const renderIcon = (data: any, index: number) => {
-    const isWebMr = (index + 1) % 4 === 0 ? false : true;
-    const isMobileMr = (index + 1) % 3 === 0 ? false : true;
-    const mrNumber = isMobile ? "35px" : "120px";
-    const isMr = isMobile ? isMobileMr : (isTablet ? isMobileMr : isWebMr);
-    return(
+    const isWebMr = (index + 1) % 4 === 0 ? false : true
+    const isMobileMr = (index + 1) % 3 === 0 ? false : true
+    const mrNumber = isMobile ? '35px' : '120px'
+    const isMr = isMobile ? isMobileMr : isTablet ? isMobileMr : isWebMr
+    return (
       <Popover content={data.desc} arrowPointAtCenter>
-        <AutoColumn justify="center" key={index} style={{marginRight: isMr ? mrNumber : '0', marginBottom: '36px'}}>
+        <AutoColumn justify="center" key={index} style={{ marginRight: isMr ? mrNumber : '0', marginBottom: '36px' }}>
           <LocalStyle.MemberAvatarContainer>
-            <LocalStyle.MemberAvatar src={data?.avatar}/>
+            <LocalStyle.MemberAvatar src={data?.avatar} />
           </LocalStyle.MemberAvatarContainer>
-          <Text color={"white"} fontWeight={"700"} fontSize={isMobile ? "16px" : "20px"}>{data.name}</Text>
-            <LocalStyle.MemberText>{data.desc.substr(0, 32) + '...'}</LocalStyle.MemberText>
+          <Text color={'white'} fontWeight={'700'} fontSize={isMobile ? '16px' : '20px'}>
+            {data.name}
+          </Text>
+          <LocalStyle.MemberText>{data.desc.substr(0, 32) + '...'}</LocalStyle.MemberText>
         </AutoColumn>
       </Popover>
     )
   }
-  
+
   const renderList = (title: string, data: Object[]) => {
-    return(
+    return (
       <Col>
-        <Text color={"white"} fontWeight={"700"} fontSize={"24px"} mt={isMobile ? "40px" : "62px"} mb="32px">{title}</Text>
+        <Text color={'white'} fontWeight={'700'} fontSize={'24px'} mt={isMobile ? '40px' : '62px'} mb="32px">
+          {title}
+        </Text>
         <Row>
           {data.map((item, index) => {
             return renderIcon(item, index)
@@ -54,40 +59,68 @@ const MemberPage: React.FunctionComponent = (props) => {
 
   return (
     <>
+      <Helmet>
+        <title>Member List - GoDao</title>
+        <meta
+          name="description"
+          content="A list of the GoDao members, including engineers, operation, advisors, ambassadors and more."
+        />
+      </Helmet>
       <Container style={{ minHeight: '80vh' }} width={pageWidth}>
         <FadeInUp isH5>
           <AutoColumn justify="center">
-            <LocalStyle.ImgMemberTitle src={titleMember}/>
-            <LocalStyle.SecondText mt={isMobile ? "20px" : "17px"} style={{width: isMobile ? '210px' : 'auto', textAlign: 'center'}}>{t('DAO_25')}</LocalStyle.SecondText>
+            <LocalStyle.ImgMemberTitle src={titleMember} />
+            <LocalStyle.SecondText
+              mt={isMobile ? '20px' : '17px'}
+              style={{ width: isMobile ? '210px' : 'auto', textAlign: 'center' }}
+            >
+              {t('DAO_25')}
+            </LocalStyle.SecondText>
           </AutoColumn>
         </FadeInUp>
-        <Img 
+        <Img
           decode={true}
-          style={{width: '1200px', height: 'auto', marginTop: '53px'}}
+          style={{ width: '1200px', height: 'auto', marginTop: '53px' }}
           loader={<LocalStyle.ImgMemberMap src={memberMap} />}
           unloader={<LocalStyle.ImgMemberLoading />}
-          src={[memberMap as string]}/>
+          src={[memberMap as string]}
+        />
 
-        <LocalStyle.MemberContainer> 
+        <LocalStyle.MemberContainer>
           {/* <FadeInUp> */}
-            <RowBetween style={{flexWrap: 'wrap', justifyContent: isMobile ? 'flex-start' : 'space-between'}}>
-              {
-                category.map((item, index) => {
-                  const isCategoryMr = isMobile ? (index + 1) % 3 === 0 ? false : true : false;
-                  if(tab === index) return <LocalStyle.MemberBtnSec onClick={() => setTab(index)} isCategoryMr={isCategoryMr} width={index === 4 ? '140px' : '120px'}>{item}</LocalStyle.MemberBtnSec>
-                  return <LocalStyle.MemberBtn onClick={() => setTab(index)} isCategoryMr={isCategoryMr}  width={index === 4 ? '140px' : '120px'}>{item}</LocalStyle.MemberBtn>
-                })
-              }
-            </RowBetween>
+          <RowBetween style={{ flexWrap: 'wrap', justifyContent: isMobile ? 'flex-start' : 'space-between' }}>
+            {category.map((item, index) => {
+              const isCategoryMr = isMobile ? ((index + 1) % 3 === 0 ? false : true) : false
+              if (tab === index)
+                return (
+                  <LocalStyle.MemberBtnSec
+                    onClick={() => setTab(index)}
+                    isCategoryMr={isCategoryMr}
+                    width={index === 4 ? '140px' : '120px'}
+                  >
+                    {item}
+                  </LocalStyle.MemberBtnSec>
+                )
+              return (
+                <LocalStyle.MemberBtn
+                  onClick={() => setTab(index)}
+                  isCategoryMr={isCategoryMr}
+                  width={index === 4 ? '140px' : '120px'}
+                >
+                  {item}
+                </LocalStyle.MemberBtn>
+              )
+            })}
+          </RowBetween>
           {/* </FadeInUp> */}
           {(tab === 0 || tab === 1) && renderList(t('DAO_29'), ambassadorList['Engineer'])}
           {(tab === 0 || tab === 2) && renderList(t('DAO_30'), ambassadorList['Operation'])}
           {(tab === 0 || tab === 3) && renderList(t('DAO_31'), ambassadorList['Advisor'])}
-        {(tab === 0 || tab === 4) && renderList(t('DAO_32'), ambassadorList['Ambassador'])}
+          {(tab === 0 || tab === 4) && renderList(t('DAO_32'), ambassadorList['Ambassador'])}
         </LocalStyle.MemberContainer>
       </Container>
-      <GoForm isMobile={isMobile}/>
-      <Footer isMobile={isMobile}/>
+      <GoForm isMobile={isMobile} />
+      <Footer isMobile={isMobile} />
     </>
   )
 }
