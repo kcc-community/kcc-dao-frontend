@@ -70,7 +70,7 @@ export const ambassadorList = {
     {
       name: 'Summer',
       avatar: require('../assets/images/ambassador/female-2.png').default,
-      desc: 'A young profession with a master’s degree in Corporate and Organizational Communication at Northeastern University. Summer is an energetic, ambitious person who possesses a broad knowledge of marketing and business development as well as a deep understanding of blockchain technology. ',
+      desc: 'A young professional with a master’s degree in Corporate and Organizational Communication at Northeastern University. Summer is an energetic, ambitious person who possesses a broad knowledge of marketing and business development as well as a deep understanding of blockchain technology. ',
     },
   ],
   Advisor: [
