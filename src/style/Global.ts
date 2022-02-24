@@ -18,6 +18,9 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
   }
+  .ant-deawer-body {
+  padding: 0 !important;
+}
 `
 
 export default GlobalStyle

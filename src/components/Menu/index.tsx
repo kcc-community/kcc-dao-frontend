@@ -1,14 +1,22 @@
 import React, { FunctionComponent } from 'react'
-import styled, { useTheme } from 'styled-components'
+import styled, { useTheme, css } from 'styled-components'
 import { RowFixed, RowBetween } from '../Row'
 import { Text } from '../../style'
 import { useHistory } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useResponsive } from 'utils/responsive'
+import UnicornLink from 'components/UnicornLink'
+import { Drawer } from 'antd'
 
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+`
+
+const StyledDrawer = styled(Drawer)`
+  .ant-drawer-body {
+    padding: 0;
+  }
 `
 
 const StyledNav = styled.nav`
@@ -36,7 +44,6 @@ const BodyWrapper = styled.div`
   position: relative;
   display: flex;
 `
-
 
 const Inner = styled.div`
   flex-grow: 1;
@@ -71,16 +78,35 @@ const ImgLines = styled.div`
   margin: 0 12px;
 `
 
+const Column = styled.div`
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: #000;
+  padding: 24px 0 0 40px;
+  width: 100%;
+  height: 100%;
+`
+
+const ImgMenu = styled.img`
+  height: 16px;
+  width: 16px;
+  margin: 0 15px 0 10px;
+`
+
 interface MenuList {
   title: string
   route: string
 }
 
 const Menu: React.FunctionComponent = (props) => {
-  const { t } = useTranslation();
-  const history = useHistory();
-  const theme = useTheme();
-  const { isMobile } = useResponsive();
+  const { t } = useTranslation()
+  const history = useHistory()
+  const theme = useTheme()
+  const { isMobile } = useResponsive()
+  const [showMenu, setShow] = React.useState(false)
 
   const menuList: MenuList[] = [
     {
@@ -92,26 +118,47 @@ const Menu: React.FunctionComponent = (props) => {
       route: '/member',
     },
   ]
-  
+
   const renderMenu = (data, index) => {
-    return(
-      <a onClick={() => { window.scrollTo(0, 0); history.push(data?.route)}} key={index}>
-        <Text color={theme.colors.invertedContrast} fontSize="18px" fontWeight="500" ml={isMobile ? "24px" : "40px"}>{data?.title}</Text>
+    return (
+      <a
+        onClick={() => {
+          window.scrollTo(0, 0)
+          history.push(data?.route)
+        }}
+        key={index}
+      >
+        <Text
+          color={theme.colors.invertedContrast}
+          fontSize="18px"
+          fontWeight="500"
+          mt={isMobile ? '20px' : '0px'}
+          ml={isMobile ? '0px' : '40px'}
+        >
+          {data?.title}
+        </Text>
       </a>
     )
   }
 
-  return ( 
+  return (
     <Wrapper>
       <StyledNav>
-        <RowBetween style={{maxWidth: '1200px', margin: '0 auto'}}>
+        <RowBetween style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <RowFixed>
+            {isMobile && (
+              <ImgMenu
+                src={require('../../assets/images/Icons/h5/menu.png').default}
+                onClick={() => setShow(!showMenu)}
+              />
+            )}
             <a href="https://www.kcc.io/" target="_blank">
-              <ImgKccLogo src={require('../../assets/images/home/kcc.png').default}/>
+              <ImgKccLogo src={require('../../assets/images/home/kcc.png').default} />
             </a>
             <ImgLines />
-            <ImgLogo src={require('../../assets/images/home/logo.png').default} onClick={() => history.push('/')}/>
-            { menuList.map((item, index) => renderMenu(item, index)) }
+            <ImgLogo src={require('../../assets/images/home/logo.png').default} onClick={() => history.push('/')} />
+            {!isMobile && menuList.map((item, index) => renderMenu(item, index))}
+            {!isMobile && <UnicornLink />}
           </RowFixed>
           <RowFixed>
             {/* {!!login && !!logout && (
@@ -123,10 +170,27 @@ const Menu: React.FunctionComponent = (props) => {
         </RowBetween>
       </StyledNav>
       <BodyWrapper>
-        <Inner>
-          {props.children}
-        </Inner>
+        <Inner>{props.children}</Inner>
       </BodyWrapper>
+      <StyledDrawer
+        style={{ padding: '0px', margin: '0px' }}
+        placement={'left'}
+        closable={false}
+        onClose={() => {
+          setShow(false)
+        }}
+        visible={showMenu}
+        key={'left'}
+      >
+        <Column
+          onClick={() => {
+            setShow(false)
+          }}
+        >
+          {menuList.map((item, index) => renderMenu(item, index))}
+          <UnicornLink />
+        </Column>
+      </StyledDrawer>
     </Wrapper>
   )
 }
