@@ -4,7 +4,7 @@ import { Text } from '../../style'
 import Col from 'components/Column'
 
 interface TitleProps {
-  type: string 
+  type: string
   title: string
   number?: number
   mb?: string
@@ -36,11 +36,12 @@ const NumberContainer = styled.div`
   min-width: 400px;
   ${({ theme }) => theme.mediaQueries.sm} {
     min-width: 0;
+    padding: 0 24px;
   }
 `
 
 const Number = styled.div`
-  color: #B8C6D833;
+  color: #b8c6d833;
   font-size: 120px;
   font-weight: bold;
   position: absolute;
@@ -53,7 +54,7 @@ const Number = styled.div`
 const NumberText = styled(Text)`
   color: white;
   font-size: 48px;
-  font-weight: 700;  
+  font-weight: 700;
   font-family: 'kccfont-bold';
   ${({ theme }) => theme.mediaQueries.sm} {
     font-size: 40px;
@@ -61,9 +62,8 @@ const NumberText = styled(Text)`
 `
 
 const Title: React.FunctionComponent<TitleProps> = (props) => {
-
-  if(props.type === "number"){
-    return(
+  if (props.type === 'number') {
+    return (
       <NumberContainer>
         <Number>{props.number}</Number>
         <NumberText>{props.title}</NumberText>
@@ -74,12 +74,31 @@ const Title: React.FunctionComponent<TitleProps> = (props) => {
   return (
     <LinesContainer>
       <Col>
-        {
-          props.title === 'Join Our Community' && props.isMobile ? 
-          <Text color="white" fontSize={"32px"} fontWeight="700" style={{position: 'relative', zIndex: 1, marginBottom: '5px', marginTop: '-60px', fontFamily: 'kccfont-bold'}}>{props.title}</Text>
-          :
-          <Text color="white" fontSize={props.isMobile ? "40px" : "52px"} fontWeight="700" style={{position: 'relative', zIndex: 1, fontFamily: 'kccfont-bold'}}>{props.title}</Text>
-        }
+        {props.title === 'Join Our Community' && props.isMobile ? (
+          <Text
+            color="white"
+            fontSize={'32px'}
+            fontWeight="700"
+            style={{
+              position: 'relative',
+              zIndex: 1,
+              marginBottom: '5px',
+              marginTop: '-60px',
+              fontFamily: 'kccfont-bold',
+            }}
+          >
+            {props.title}
+          </Text>
+        ) : (
+          <Text
+            color="white"
+            fontSize={props.isMobile ? '32px' : '52px'}
+            fontWeight="700"
+            style={{ position: 'relative', zIndex: 1, fontFamily: 'kccfont-bold' }}
+          >
+            {props.title}
+          </Text>
+        )}
         <Lines />
       </Col>
     </LinesContainer>

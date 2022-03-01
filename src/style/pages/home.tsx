@@ -4,7 +4,6 @@ import Col from '../../components/Column'
 import Row, { RowBetween } from '../../components/Row'
 import { background } from '../../constants/imgs'
 
-
 export const HomeBackground = styled.div`
   background: url(${background});
   height: 900px;
@@ -37,6 +36,7 @@ export const SecondText = styled(Text)`
   letter-spacing: 1.2px;
   ${({ theme }) => theme.mediaQueries.sm} {
     letter-spacing: 1.1px;
+    padding: 0 28px;
   }
 `
 
@@ -64,7 +64,7 @@ export const InfoCol = styled(Col)`
 `
 
 export const HomeDao = styled(RowBetween)`
-  maxWidth: 916px;
+  max-width: 916px;
   flex-wrap: wrap;
 `
 
@@ -89,18 +89,18 @@ export const HomeFeatureLeft = styled.img`
   }
 `
 
-export const HomeCommunityCard= styled.div`
+export const HomeCommunityCard = styled.div`
   width: 100%;
   height: 500px;
   border-radius: 20px;
-  margin-top: 143px;
+  margin-top: -100px;
   margin-bottom: 88px;
-  background: #1F2431;
+  background: #1f2431;
   position: relative;
   ${({ theme }) => theme.mediaQueries.sm} {
     width: 341px;
-    height: 661px;
-    margin: 160px auto 40px auto;
+    height: 621px;
+    margin: 100px auto 40px auto;
   }
 `
 
@@ -118,7 +118,7 @@ export const HomeCommunityCardContainer = styled.div`
 `
 
 export const HomeCommunityCardBg = styled.div`
-  background: #1ABB97;
+  background: #1abb97;
   opacity: 1;
   filter: blur(100px);
   height: 200px;
@@ -152,10 +152,10 @@ export const HomeCommunityMediaLink = styled.a`
   width: 150px;
   border-radius: 12px;
   :hover {
-    background: #3B4252;
+    background: #3b4252;
   }
   ${({ theme }) => theme.mediaQueries.sm} {
-    margin-bottom: 46px;
+    margin-bottom: 0px;
   }
 `
 
@@ -164,6 +164,3 @@ export const HomeImgCommunity = styled.img`
   width: 72px;
   margin-bottom: 8px;
 `
-
-
-

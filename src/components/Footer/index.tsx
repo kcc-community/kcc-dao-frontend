@@ -14,7 +14,7 @@ const FooterWrap = styled.div<{ transparent?: boolean }>`
   align-items: center;
   ${({ theme }) => theme.mediaQueries.sm} {
     height: 180px;
-    background: #262C3A;
+    background: #262c3a;
     padding: 0 44px;
   }
 `
@@ -23,43 +23,50 @@ const MediaItem = styled.a`
   height: 42px;
   width: 42px;
   border-radius: 20px;
-  background: #FFFFFF33;
+  background: #ffffff33;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 24px;
-  :hover{
-    background: #B8C6D8;
+  :hover {
+    background: #b8c6d8;
   }
   ${({ theme }) => theme.mediaQueries.sm} {
     background: none;
-    margin: 32px 0 0 0;  
+    margin: 32px 0 0 0;
   }
-
 `
 
 interface FooterProps {
   transparent?: boolean
   isMobile?: boolean
-} 
+}
 
 const Footer: React.FunctionComponent<FooterProps> = (props) => {
-  const footer = "© 2021 GoDao All rights reserved";
+  const footer = `© ${new Date().getFullYear()} GoDao All rights reserved`
 
   useEffect(() => {
-    for(let index in media){
-      $('.' + media[index].app).hover(function(){
-        $('.' + media[index].app + 'Logo').attr('src', media[index].hover)
-      }, function(){
-        $('.' + media[index].app + 'Logo').attr('src', media[index].icon)
-      })
+    for (let index in media) {
+      $('.' + media[index].app).hover(
+        function () {
+          $('.' + media[index].app + 'Logo').attr('src', media[index].hover)
+        },
+        function () {
+          $('.' + media[index].app + 'Logo').attr('src', media[index].icon)
+        }
+      )
     }
   }, [])
 
   const renderMedia = (data, index) => {
-    return(
+    return (
       <MediaItem href={data?.route} target="_blank" key={index} className={data?.app}>
-        <img src={props.isMobile ? data?.h5 : data?.icon} style={{width: props.isMobile ? '44px' : '20px'}} alt={data?.app} className={data?.app + 'Logo'}/> 
+        <img
+          src={props.isMobile ? data?.h5 : data?.icon}
+          style={{ width: props.isMobile ? '44px' : '20px' }}
+          alt={data?.app}
+          className={data?.app + 'Logo'}
+        />
       </MediaItem>
     )
   }
@@ -67,22 +74,17 @@ const Footer: React.FunctionComponent<FooterProps> = (props) => {
   return (
     <FooterWrap transparent={props?.transparent}>
       <Container>
-        {
-          props.isMobile ?
+        {props.isMobile ? (
           <AutoColumn justify="center">
             <Text color={'#FFFFFFCC'}>{footer}</Text>
-            <RowBetween>
-              {media.map((item, index) => renderMedia(item, index))}
-            </RowBetween>
+            <RowBetween>{media.map((item, index) => renderMedia(item, index))}</RowBetween>
           </AutoColumn>
-          :
+        ) : (
           <RowBetween>
             <Text color={'#FFFFFFCC'}>{footer}</Text>
-            <Row style={{width: 'auto'}}>
-              {media.map((item, index) => renderMedia(item, index))}
-            </Row>
+            <Row style={{ width: 'auto' }}>{media.map((item, index) => renderMedia(item, index))}</Row>
           </RowBetween>
-        }
+        )}
       </Container>
     </FooterWrap>
   )
