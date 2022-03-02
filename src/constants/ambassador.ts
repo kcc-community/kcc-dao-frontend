@@ -82,7 +82,7 @@ export const ambassadorList = {
     {
       name: 'Jeff',
       avatar: require('../assets/images/ambassador/man-4.png').default,
-      desc: 'Engineer turned operations specialist with over a decade of experience in SaaS, AI, IoT, and blockchain, Jeff brings unique and powerful expertise to the table.He is versed in getting teams access to resources and direction to build effectively, and is here to do exactly that for GoDao.',
+      desc: 'Engineer turned operations specialist with over a decade of experience in SaaS, AI, IoT, and blockchain, Jeff brings unique and powerful expertise to the table.He is versed in getting teams access to resources and direction to build effectively, and is here to do exactly that for GoDAO.',
     },
   ],
   Ambassador: [
@@ -100,31 +100,31 @@ export const ambassadorList = {
       name: 'Eneko',
       avatar: require('../assets/images/ambassador/man-1.png').default,
       desc: 'More than 20 Years of experience in IT and Security Infrastructures. Working for differents consultant companies. Since 2017 working with cryptocurrencies and blockchain. Have done a lot of Blockchain and crypto meetups.',
-    },{
+    }, {
       name: 'Svyatoslav',
       avatar: require('../assets/images/ambassador/man-2.png').default,
       desc: 'My name is Svyatoslav, I am a crypto enthusiast from Russia. In this area since 2017. I professional graphic designer, articles writer. In recent years, I have been able to participate in many strong projects as an ambassador and content creator. My hobby is to create NFT and draw graphics.',
-    },{
+    }, {
       name: 'Micky',
       avatar: require('../assets/images/ambassador/man-2.png').default,
       desc: "Coming from birthplace of many crypto exchange, I'm passionate about blockchain and its impact on all of us. Let's work together to make KCC one of the best chain out there!",
-    },{
+    }, {
       name: 'Rashad',
       avatar: require('../assets/images/ambassador/man-1.png').default,
       desc: "I'm a Crypto Influencer and Financial Content Creator in Azerbaijan. As a Hacettepe University Master of Economics graduate, I have been working in Crypto and Blockchain since 2017, which is as important as the birth of the Internet. KCC will take Blockchain to another level.",
-    },{
+    }, {
       name: 'Eugene',
       avatar: require('../assets/images/ambassador/man-3.png').default,
       desc: "I'm an experienced video creator from Ukraine, managing two YouTube channels in English and Russian languages, looking to create quality content to help and educate users. Very excited about our decentralized blockchain future and always open to learning something new and challenging.",
-    },{
+    }, {
       name: 'Isah',
       avatar: require('../assets/images/ambassador/man-4.png').default,
       desc: 'I’m a crypto enthusiast and a digital marketing specialist. I’ve been working on blockchain technology since late 2018. I have experience in social media management, community management, and content writing. I have a passion for contributing to open source and community building projects and also have a great interest in reading, teaching, and computing.',
-    },{
+    }, {
       name: 'AWAS',
       avatar: require('../assets/images/ambassador/man-3.png').default,
       desc: "I have been a regular developer for about 4 years and I moved to Blockchain development about a year ago. My main experience is with solidity and web3 development. Not only am I developing in the space, but I'm also investing in various defi plattforms.",
-    },{
+    }, {
       name: 'Sorbitov',
       avatar: require('../assets/images/ambassador/man-2.png').default,
       desc: "I'm Alex! From Russia with love! I am fluent in Russian and English. I am a professional content creator - videos, articles, memes. Youtuber, leading YouTube channel, where I post my content. Provide information support and promotion of crypto projects.Also my hobby is launching nodes - I used to participate in events like Coda, Phala, Hopr Moonbeam.",

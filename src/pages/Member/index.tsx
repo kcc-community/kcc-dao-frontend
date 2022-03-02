@@ -60,10 +60,10 @@ const MemberPage: React.FunctionComponent = (props) => {
   return (
     <>
       <Helmet>
-        <title>Member List - GoDao</title>
+        <title>Member List - GoDAO</title>
         <meta
           name="description"
-          content="A list of the GoDao members, including engineers, operation, advisors, ambassadors and more."
+          content="A list of the GoDAO members, including engineers, operation, advisors, ambassadors and more."
         />
       </Helmet>
       <Container style={{ minHeight: '80vh' }} width={pageWidth}>

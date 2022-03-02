@@ -43,7 +43,7 @@ interface FooterProps {
 }
 
 const Footer: React.FunctionComponent<FooterProps> = (props) => {
-  const footer = `© ${new Date().getFullYear()} GoDao All rights reserved`
+  const footer = `© ${new Date().getFullYear()} GoDAO All rights reserved`
 
   useEffect(() => {
     for (let index in media) {

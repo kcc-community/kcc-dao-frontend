@@ -257,7 +257,7 @@ const HomePage: React.FunctionComponent = (props) => {
   return (
     <>
       <Helmet>
-        <title>GoDao - Let Every Member of the KCS Community can Participate in KCC Decision-making</title>
+        <title>GoDAO - Let Every Member of the KCS Community can Participate in KCC Decision-making</title>
         <meta
           name="description"
           content="GoDAO is a DAO built by KCC community and KCS token holders. It is the main way for community users to directly participate in the development and management of KCC."
