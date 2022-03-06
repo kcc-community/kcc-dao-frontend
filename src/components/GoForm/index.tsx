@@ -16,7 +16,7 @@ const imgs = {
 
 const FormBg = styled.div`
   background: url(${imgs['banner']});
-  height:  360px;
+  height: 360px;
   max-width: 1920px;
   background-size: cover;
   background-position: center;
@@ -24,6 +24,7 @@ const FormBg = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 `
 
 const FormContainer = styled.div`
@@ -35,7 +36,7 @@ const FormContainer = styled.div`
 const FormBtn = styled.a`
   width: 345px;
   height: 48px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 24px;
   margin-top: 35px;
   display: flex;
@@ -45,8 +46,8 @@ const FormBtn = styled.a`
   color: ${({ theme }) => theme.colors.primary};
   font-size: 16px;
   font-weight: 700;
-  :hover{
-    background: #29CD97;
+  :hover {
+    background: #29cd97;
     color: white !important;
   }
 `
@@ -61,20 +62,30 @@ const GoForm: React.FunctionComponent<GoFormProps> = (props) => {
   const { t } = useTranslation()
 
   useEffect(() => {
-    $('.formBtn').hover(function(){
-      $('.formBtnLogo').attr('src', imgs['sendHover'])
-    }, function(){
-      $('.formBtnLogo').attr('src', imgs['send'])
-    })
+    $('.formBtn').hover(
+      function () {
+        $('.formBtnLogo').attr('src', imgs['sendHover'])
+      },
+      function () {
+        $('.formBtnLogo').attr('src', imgs['send'])
+      }
+    )
   }, [])
 
   return (
     <FormContainer>
       <FormBg>
-        <Text fontSize={props.isMobile ? "30px" : "40px"} color={"white"} fontWeight={"700"} style={{textAlign: 'center'}}>{t('DAO_26')}</Text>
+        <Text
+          fontSize={props.isMobile ? '30px' : '40px'}
+          color={'white'}
+          fontWeight={'700'}
+          style={{ textAlign: 'center' }}
+        >
+          {t('DAO_26')}
+        </Text>
         <FormBtn className={'formBtn'} href="https://forms.office.com/r/WjXJNCwqz3" target="_blank">
           <div>{t('DAO_27')}</div>
-          <FormImgSend src={imgs['send']} className={'formBtnLogo'}/>
+          <FormImgSend src={imgs['send']} className={'formBtnLogo'} />
         </FormBtn>
       </FormBg>
     </FormContainer>
