@@ -45,6 +45,21 @@ export const ambassadorList = {
       avatar: require('../assets/images/ambassador/man-3.png').default,
       desc: 'Focus on Backend developing for more than 7 years, with experience in High-Concurrent Network Server, and Distributed Systems. Developing Decentralized Blockchain Applications start in 2017.',
     },
+    {
+      name: 'Junm',
+      avatar: require('../assets/images/ambassador/man-2.png').default,
+      desc: 'A blockchain developer. A boring man who is interested in cryptocurrencies & blockchain technologies.',
+    },
+    {
+      name: 'Lee',
+      avatar: require('../assets/images/ambassador/man-4.png').default,
+      desc: 'Five years of Internet work experience, responsible for the project management of hundreds of projects. Lee is a person who is willing to share and likes to precipitate methodology.',
+    },
+    {
+      name: 'Vincent',
+      avatar: require('../assets/images/ambassador/man-2.png').default,
+      desc: 'Vincent is an engineer at KCC.Passionate about blockchain industry, focusing on blockchain and web3 research and development.A strong believer in crypto and web3.',
+    },
   ],
   Operation: [
     {
@@ -71,6 +86,31 @@ export const ambassadorList = {
       name: 'Summer',
       avatar: require('../assets/images/ambassador/female-2.png').default,
       desc: 'A young professional with a master’s degree in Corporate and Organizational Communication at Northeastern University. Summer is an energetic, ambitious person who possesses a broad knowledge of marketing and business development as well as a deep understanding of blockchain technology. ',
+    },
+    {
+      name: 'Punho',
+      avatar: require('../assets/images/ambassador/man-2.png').default,
+      desc: '3 years of experience in top-tier internet companies, Punho is a cryptoholic and crypto evangelist, specializing in operation and hack growth.',
+    },
+    {
+      name: 'Margarita',
+      avatar: require('../assets/images/ambassador/female-2.png').default,
+      desc: '5 years of marketing and operation experience, and started to focus on blockchain industry from 2019, especially the spanish speaking market,. Margarita will bring more marketing resources to KCC to make the KCC ecosystem more prosperous. ',
+    },
+    {
+      name: 'Annabel',
+      avatar: require('../assets/images/ambassador/female-1.png').default,
+      desc: 'A cryptocurrency enthusiast and practitioner with 3 years of marketing and business development experience in decentralized field, also a strong supporter of Web3.0.',
+    },
+    {
+      name: 'Dora',
+      avatar: require('../assets/images/ambassador/female-2.png').default,
+      desc: 'Master of Economics, Focus on DEFI ecological research and user growth. A believer of KCC.',
+    },
+    {
+      name: 'Iris',
+      avatar: require('../assets/images/ambassador/female-1.png').default,
+      desc: '3 years of branding experience in internet companies and 5 years of operation experience in blockchain industry. A devoted believer in decentralization.',
     },
   ],
   Advisor: [
