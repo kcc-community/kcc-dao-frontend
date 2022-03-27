@@ -18,6 +18,7 @@ import { useTranslation } from 'react-i18next'
 import { useHistory } from 'react-router'
 import Helmet from 'react-helmet'
 import AutonomousPhase from './AutonomousPhase'
+import { ambassadorList } from '../../constants/ambassador'
 
 const FeatureText = styled.div`
   font-family: 'kccfont-bold';
@@ -65,7 +66,7 @@ const HomePage: React.FunctionComponent = (props) => {
       let info = {
         address: res[0].addressCount,
         proposal: res[1].proposals.length,
-        member: 10,
+        member: ambassadorList.Engineer.length + ambassadorList.Operation.length,
       }
       setInfo(info)
     })
