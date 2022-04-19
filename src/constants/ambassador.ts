@@ -67,11 +67,11 @@ export const ambassadorList = {
       avatar: require('../assets/images/ambassador/man-2.png').default,
       desc: 'Nine years of software development background and three years of blockchain research and development background, focusing on the research and exploration of application layer, familiar with public chain and defi, also a DAO enthusiast.',
     },
-    {
-      name: 'Sam',
-      avatar: require('../assets/images/ambassador/man-4.png').default,
-      desc: 'Having graduated from University of Wisconsin-Madison and succeeded in prominent companies like Deloitte Consulting and Amway Global previously, Sam brings his high level of expertise in business operation and leadership/organizational development to KCC.',
-    },
+    // {
+    //   name: 'Sam',
+    //   avatar: require('../assets/images/ambassador/man-4.png').default,
+    //   desc: 'Having graduated from University of Wisconsin-Madison and succeeded in prominent companies like Deloitte Consulting and Amway Global previously, Sam brings his high level of expertise in business operation and leadership/organizational development to KCC.',
+    // },
     {
       name: 'Casey',
       avatar: require('../assets/images/ambassador/female-2.png').default,
