@@ -157,9 +157,9 @@ export const ambassadorList = {
       desc: "I'm a Crypto Influencer and Financial Content Creator in Azerbaijan. As a Hacettepe University Master of Economics graduate, I have been working in Crypto and Blockchain since 2017, which is as important as the birth of the Internet. KCC will take Blockchain to another level.",
     },
     {
-      name: 'Sorbitov',
+      name: 'Guardian',
       avatar: require('../assets/images/ambassador/man-4.png').default,
-      desc: "I'm Alex! From Russia with love! I am fluent in Russian and English. I am a professional content creator - videos, articles, memes. Youtuber, leading YouTube channel, where I post my content. Provide information support and promotion of crypto projects.Also my hobby is launching nodes - I used to participate in events like Coda, Phala, Hopr Moonbeam.",
+      desc: 'Passionate about crypto assets since 2015. CM, content creator, and support coordinator in several projects focused on cryptography.  After I ventured into this world, I never left it.  Increasingly excited about blockchain technology and all it has added to our lives.  I am a versatile person, a lover of knowledge, and always looking for something new and challenging.  I believe this world of cryptography is the future and as such we are part of this history!',
     },
     {
       name: 'Gufran',
