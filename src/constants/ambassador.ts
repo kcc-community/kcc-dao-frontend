@@ -140,44 +140,81 @@ export const ambassadorList = {
       name: 'Eneko',
       avatar: require('../assets/images/ambassador/man-1.png').default,
       desc: 'More than 20 Years of experience in IT and Security Infrastructures. Working for differents consultant companies. Since 2017 working with cryptocurrencies and blockchain. Have done a lot of Blockchain and crypto meetups.',
-    }, {
+    },
+    {
       name: 'Svyatoslav',
       avatar: require('../assets/images/ambassador/man-2.png').default,
       desc: 'My name is Svyatoslav, I am a crypto enthusiast from Russia. In this area since 2017. I professional graphic designer, articles writer. In recent years, I have been able to participate in many strong projects as an ambassador and content creator. My hobby is to create NFT and draw graphics.',
-    }, {
+    },
+    {
       name: 'Micky',
       avatar: require('../assets/images/ambassador/man-2.png').default,
       desc: "Coming from birthplace of many crypto exchange, I'm passionate about blockchain and its impact on all of us. Let's work together to make KCC one of the best chain out there!",
-    }, {
+    },
+    {
       name: 'Rashad',
       avatar: require('../assets/images/ambassador/man-1.png').default,
       desc: "I'm a Crypto Influencer and Financial Content Creator in Azerbaijan. As a Hacettepe University Master of Economics graduate, I have been working in Crypto and Blockchain since 2017, which is as important as the birth of the Internet. KCC will take Blockchain to another level.",
-    }, {
-      name: 'Eugene',
-      avatar: require('../assets/images/ambassador/man-3.png').default,
-      desc: "I'm an experienced video creator from Ukraine, managing two YouTube channels in English and Russian languages, looking to create quality content to help and educate users. Very excited about our decentralized blockchain future and always open to learning something new and challenging.",
-    }, {
-      name: 'Isah',
-      avatar: require('../assets/images/ambassador/man-4.png').default,
-      desc: 'I’m a crypto enthusiast and a digital marketing specialist. I’ve been working on blockchain technology since late 2018. I have experience in social media management, community management, and content writing. I have a passion for contributing to open source and community building projects and also have a great interest in reading, teaching, and computing.',
-    }, {
-      name: 'AWAS',
-      avatar: require('../assets/images/ambassador/man-3.png').default,
-      desc: "I have been a regular developer for about 4 years and I moved to Blockchain development about a year ago. My main experience is with solidity and web3 development. Not only am I developing in the space, but I'm also investing in various defi plattforms.",
-    }, {
+    },
+    {
       name: 'Sorbitov',
-      avatar: require('../assets/images/ambassador/man-2.png').default,
+      avatar: require('../assets/images/ambassador/man-4.png').default,
       desc: "I'm Alex! From Russia with love! I am fluent in Russian and English. I am a professional content creator - videos, articles, memes. Youtuber, leading YouTube channel, where I post my content. Provide information support and promotion of crypto projects.Also my hobby is launching nodes - I used to participate in events like Coda, Phala, Hopr Moonbeam.",
     },
     {
-      name: 'Renato',
+      name: 'Gufran',
       avatar: require('../assets/images/ambassador/man-3.png').default,
-      desc: "Passionate about crypto assets since 2015. Once I ventured into this world of crypts, I never got out of it. More and more passionate about blockchain technology and everything it has added to our lives. I am a versatile person, Lover of knowledge and always chasing something new and challenging. I believe this world of cryptography is the future, and as such, we are part of this story!",
+      desc: 'My name is Gufran, but I go by Bib in the crypto world. I am a metaverse maxi who has been active in DEFI since late 2019, and I try to help as many people as I can understand KCC and crypto in general, as well as educate the untapped population of the Indian community about the entire blockchain scene.',
     },
     {
-      name: 'Pavel',
+      name: 'Nikos',
+      avatar: require('../assets/images/ambassador/man-4.png').default,
+      desc: 'I am Nikos, KCC EU Ambassador from Greece with a PhD in Engineering. Being a crypto enthusiast for the last few years, I look forward to contributing my skills and experience in community building and management to help KCC be a top-notch chain in the crypto space and attract small and big investors.',
+    },
+    {
+      name: 'Hanzie',
       avatar: require('../assets/images/ambassador/man-1.png').default,
-      desc: "I'm a designer and developer from Ukraine, passionate about cutting edge technologies, blockchain and I believe in a future where cryptocurrencies will be a part of our usual life. ",
-    }
+      desc: 'I’m Hanzie, KCC EU Ambassador from Belgium. I’m a team leader in mental health care and active in KCC since the very beginning. I”m always willing to help the community in the chats and make entertaining and educational videos and images for KCC.',
+    },
+    {
+      name: 'Gluckzwerg',
+      avatar: require('../assets/images/ambassador/man-2.png').default,
+      desc: 'I am Gluckszwerg, KCC Africa Ambassador from Morocco. I studied Informatics in Germany and I’m a crypto enthusiast since 2016-17. I can talk English, German, French, and Arabic and will be bringing my experience to help out users in KCC. And Also onboard Africans (The untapped crypto market) as much as possible.',
+    },
+    {
+      name: 'Akshaj',
+      avatar: require('../assets/images/ambassador/man-3.png').default,
+      desc: 'I am Akshaj, KCC India Ambassador, having an experience of more than a year in crypto of managing communities. My goal is to make crypto a household name in the coming years and depict it in a simple way ',
+    },
+    {
+      name: 'Kelvin',
+      avatar: require('../assets/images/ambassador/man-4.png').default,
+      desc: "I am Kelvin, KCC Discord Community Manager. I have several years of experience in marketing and community development. I have worked on a lot of Crypto Projects and I am also a Crypto Influencer. I'm poised to make KCC one of the most Popular Public Chain ",
+    },
+    {
+      name: 'Ahmed',
+      avatar: require('../assets/images/ambassador/man-2.png').default,
+      desc: "I'm Ahmed, KCC Arabic Ambassador, I have experience in communities management, content creator (videos&photos, articles), digital marketing and supply chain management, 4 years in crypto, and a year in communities management.",
+    },
+    {
+      name: 'Danny',
+      avatar: require('../assets/images/ambassador/man-4.png').default,
+      desc: 'I’m Danny, the Ambassador for the Chinese Community. My current focus is on GameFi and I’m very excited to see the increasingly prosperous gaming eco on KCC. In addition, I run the KCC Games Guild to help spread the influence of KCC.',
+    },
+    {
+      name: 'Luis',
+      avatar: require('../assets/images/ambassador/man-1.png').default,
+      desc: 'My Name is Luis Carlos Morgado, KCC Brazil Ambassador, Official KuCoin Musketeer, Blockchain Enthusiast, Crypto Investor, Developer, and Digital Security Technical Consultant. I have been working with Cryptoactives since 2010, passionate about this world of the crypto industry. Through cryptocurrencies, we can change the way people make their payments and change their way of life through decentralized finance.',
+    },
+    {
+      name: 'Abdul',
+      avatar: require('../assets/images/ambassador/man-3.png').default,
+      desc: "I am Abdul KCC Ambassador From Africa based in Nigeria, Young and strong to drive excellent value adding Experience to the Crypto World, I am Blockchain Enthusiasts with 3 Years of Working Experience in the Crypto Industry, I am a Hardworking Graduate here in Africa 'Nigeria' with in-depth knowledge and well experienced in blockchain Management, community managing, Marketing, Content creation.",
+    },
+    {
+      name: 'Usman',
+      avatar: require('../assets/images/ambassador/man-4.png').default,
+      desc: 'I’m a crypto enthusiast and a digital marketing specialist. I’ve been working on Blockchain technology since late 2018. I have experience in social media management, community management, and content writing. I have a passion for contributing to open source and community-building projects and also have a great interest in reading, teaching, and computing.',
+    },
   ],
 }
