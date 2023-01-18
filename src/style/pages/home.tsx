@@ -93,7 +93,7 @@ export const HomeCommunityCard = styled.div`
   width: 100%;
   height: 500px;
   border-radius: 20px;
-  margin-top: -100px;
+  margin-top: 50px;
   margin-bottom: 88px;
   background: #1f2431;
   position: relative;

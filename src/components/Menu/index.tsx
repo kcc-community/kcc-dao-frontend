@@ -5,7 +5,6 @@ import { Text } from '../../style'
 import { useHistory } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useResponsive } from 'utils/responsive'
-import UnicornLink from 'components/UnicornLink'
 import { Drawer } from 'antd'
 
 const Wrapper = styled.div`
@@ -158,7 +157,7 @@ const Menu: React.FunctionComponent = (props) => {
             <ImgLines />
             <ImgLogo src={require('../../assets/images/home/logo.png').default} onClick={() => history.push('/')} />
             {!isMobile && menuList.map((item, index) => renderMenu(item, index))}
-            {!isMobile && <UnicornLink />}
+            {/* {!isMobile && <UnicornLink />} */}
           </RowFixed>
           <RowFixed>
             {/* {!!login && !!logout && (
@@ -188,7 +187,7 @@ const Menu: React.FunctionComponent = (props) => {
           }}
         >
           {menuList.map((item, index) => renderMenu(item, index))}
-          <UnicornLink />
+          {/* <UnicornLink /> */}
         </Column>
       </StyledDrawer>
     </Wrapper>

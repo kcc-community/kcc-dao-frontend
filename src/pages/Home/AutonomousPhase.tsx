@@ -250,7 +250,7 @@ const AutonomousPhase: React.FunctionComponent = () => {
           })}
         </CenterBox>
       </FadeInUp>
-      <FadeInUp delay={200}>
+      {/* <FadeInUp delay={200}>
         <SubTitle style={{ marginTop: isMobile ? '140px' : '110px' }}>{t('DAO_36')}</SubTitle>
         <FocusListWrap>
           {focusList.map((focus, index) => {
@@ -262,7 +262,7 @@ const AutonomousPhase: React.FunctionComponent = () => {
             )
           })}
         </FocusListWrap>
-      </FadeInUp>
+      </FadeInUp> */}
     </AutonomousPhaseWrap>
   )
 }
