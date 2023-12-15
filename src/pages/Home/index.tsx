@@ -49,7 +49,7 @@ const HomePage: React.FunctionComponent = (props) => {
 
   useEffect(() => {
     Promise.all([
-      getAddress(),
+      // getAddress(),
       getSnapShot({
         operationName: 'Proposals',
         variables: {
@@ -64,8 +64,9 @@ const HomePage: React.FunctionComponent = (props) => {
       }),
     ]).then((res: any) => {
       let info = {
-        address: res[0].addressCount,
-        proposal: res[1].proposals.length,
+        // address: res[0].addressCount,
+        address: 0,
+        proposal: res[0].proposals.length,
         member: ambassadorList.Engineer.length + ambassadorList.Operation.length,
       }
       setInfo(info)
@@ -279,7 +280,7 @@ const HomePage: React.FunctionComponent = (props) => {
             </AutoColumn>
           </FadeInUp>
           <LocalStyle.InfoContainer>
-            {InfoData(t('DAO_1'), info.address, 0)}
+            {/* {InfoData(t('DAO_1'), info.address, 0)} */}
             {InfoData(t('DAO_2'), info.member, 1)}
             {InfoData(t('DAO_3'), info.proposal, 2)}
           </LocalStyle.InfoContainer>

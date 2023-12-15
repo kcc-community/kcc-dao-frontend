@@ -1,7 +1,7 @@
 import { get, post } from './axios'
 
 export function getHomePriceInfo(){
-  return get('/api/v1/kcs/price')
+  return get('https://market.kcc.network/api/v1/prices')
 }
 
 export function postSnapShot(data): Object{
